@@ -45,7 +45,7 @@ export default function HomeHero() {
                 images={homeHero.slideshow}
                 sizes="(min-width: 1025px) 20vw, (min-width: 768px) 70vw, 100vw"
               />
-              <VideoPopupButton videoId={KIT_VIDEO_ID} label="Play Verdea showreel" className="relative" />
+              <VideoPopupButton videoId={KIT_VIDEO_ID} label="Play: Where Coffee Began" className="relative" />
             </div>
             <figcaption className="text-small text-background">&quot;{homeHero.videoCaption}&quot;</figcaption>
           </figure>

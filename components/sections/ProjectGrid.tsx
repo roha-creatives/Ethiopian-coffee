@@ -5,7 +5,6 @@ import { cascade, reveal } from "@/lib/reveal";
 
 // Project card: 1px Border side rules, 48px/24px padding (24px tablet), 48px gaps.
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const meta = [`Client : ${project.client}`, `Year : ${project.year}`, `Location : ${project.location}`];
   return (
     <article className="flex flex-col gap-12 border-x border-border p-6 lg:px-6 lg:py-12" {...reveal(cascade(index))}>
       <div className="font-body text-subtitle text-text">/{String(index + 1).padStart(2, "0")}</div>
@@ -19,7 +18,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         <p className="text-body text-text">{project.summary}</p>
       </div>
       <ul className="font-body text-subtitle text-secondary capitalize">
-        {meta.map((line) => (
+        {project.meta.map((line) => (
           <li key={line} className="border-border [&:not(:first-child)]:mt-3 [&:not(:first-child)]:border-t [&:not(:first-child)]:pt-3">
             {line}
           </li>

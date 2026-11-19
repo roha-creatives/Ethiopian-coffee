@@ -36,15 +36,15 @@ async function ServiceDetail({ params }: Pick<PageProps<"/services/[slug]">, "pa
 
   return (
     <>
-      <PageHero title="Service Detail" image={service.detail.heroImage} />
+      <PageHero title={service.title} image={service.detail.heroImage} />
       <ServiceIntro service={service} />
       <FeatureShowcase
         index={6}
         label="Key Features"
-        heading="Transforming Spaces Into Living Art"
+        heading="Cupped, Certified, Shipped Worldwide"
         items={service.detail.features}
         image={service.detail.featuresImage}
-        imageAlt="Landscaper rolling out fresh turf"
+        imageAlt={service.detail.featuresImageAlt}
         imageMode="stretch"
       />
       <ProjectsSection index={5} />

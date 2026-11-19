@@ -20,11 +20,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Verdea — Landscaping & Gardening",
-    template: "%s | Verdea",
+    default: "Ethiopian Coffee by Hanan Tarq",
+    template: "%s | Ethiopian Coffee",
   },
   description:
-    "From lush gardens to elegant landscapes, we create outdoor spaces that inspire and thrive all year round.",
+    "Grade 1 specialty Arabica from Sidama, Bombe, Yirgacheffe & Guji — green and roasted, exported from the birthplace of coffee to the world.",
 };
 
 // Runs before first paint so entrance-animated elements start hidden (no flash), unless the

@@ -123,19 +123,19 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
             name="phone"
             type="tel"
             autoComplete="tel"
-            placeholder="e.g +62 123 456"
+            placeholder="e.g. +1 555 010 2030"
             value={values.phone}
             onChange={(e) => set("phone", e.target.value)}
             className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor={fid("location")} className={labelClass}>Location</label>
+          <label htmlFor={fid("location")} className={labelClass}>Destination Market</label>
           <input
             id={fid("location")}
             name="location"
             autoComplete="address-level2"
-            placeholder="e.g. Bandar Lampung"
+            placeholder="e.g. Hamburg, Germany"
             value={values.location}
             onChange={(e) => set("location", e.target.value)}
             className={fieldClass}
@@ -149,7 +149,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
           id={fid("message")}
           name="message"
           rows={5}
-          placeholder="Write your message or Questions here"
+          placeholder="Coffee of interest, volumes, and any questions"
           value={values.message}
           onChange={(e) => set("message", e.target.value)}
           className={`${fieldClass} min-h-[136px] resize-y`}
@@ -176,7 +176,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
           disabled={submitting}
           className={buttonClasses("primary", "py-[15px] disabled:cursor-wait disabled:opacity-70")}
         >
-          Discover Now
+          Send Inquiry
           {submitting && <LoaderCircle className="size-4 animate-spin" aria-hidden="true" />}
         </button>
         <p

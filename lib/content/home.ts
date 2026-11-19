@@ -1,41 +1,59 @@
-import type { StaticImageData } from "next/image";
-import { featureIcons, images } from "@/lib/images";
+import type { LucideIcon } from "lucide-react";
+import { Award, FileCheck, Globe, Sprout } from "lucide-react";
+import { images } from "@/lib/images";
 import type { Cta } from "./site";
 
-// Home hero (home.json section 1). Badge and intro copy are shared: see site.ts.
+// Home hero (ethiopiancoffee.net). Badge and intro copy are shared: see site.ts.
 export const homeHero = {
-  title: "Green Designs for Modern Living",
-  image: images.harvestTomatoes,
-  primaryCta: { label: "Discover Our Services", href: "/services" } satisfies Cta,
-  secondaryCta: { label: "View Our Projects", href: "/projects" } satisfies Cta,
-  slideshow: [images.woodenBridge, images.zenCourtyard, images.cozyGardenDining, images.recreation],
-  videoCaption: "Visual stories of outdoor spaces designed with care, creativity, and timeless elegance.",
-  tags: ["Gardening", "Landscape", "Eco-Friendly", "Sustainable Growth", "Bespoke Landscaping"],
+  title: "Ethiopian Coffee by Hanan Tarq",
+  image: images.dryingBeds,
+  primaryCta: { label: "Explore the Catalogue", href: "/services" } satisfies Cta,
+  secondaryCta: { label: "Become an Importer", href: "/contact" } satisfies Cta,
+  slideshow: [images.cherryBasket, images.picking, images.parchment, images.roastedTins],
+  videoCaption: "From highland farms to your port — hand-selected, cupped, and documented at every step.",
+  tags: ["Sidama", "Yirgacheffe", "Guji", "Grade 1 Specialty", "Washed & Natural"],
 };
 
-// "Why Choose Us" rows (home.json, our-project.json).
-export type Feature = { title: string; description: string; icon: StaticImageData };
+// Icon rows ("Why Ethiopian Coffee", core values, key features).
+export type Feature = { title: string; description: string; icon: LucideIcon };
 
 export const features: Feature[] = [
-  { title: "Experienced Experts", description: "A team of skilled gardeners & landscape designers.", icon: featureIcons.gardener },
-  { title: "Eco-Friendly Approach", description: "Sustainable methods that protect nature.", icon: featureIcons.sprouts },
-  { title: "Customized Solutions", description: "Every project is tailored to client needs.", icon: featureIcons.pottedPlant },
-  { title: "End-to-End Services", description: "From design to long-term maintenance.", icon: featureIcons.lawnMower },
+  {
+    title: "Specialty Only",
+    description: "We trade nothing below specialty. Grade 1 is our standard, with Grade 2 on request.",
+    icon: Award,
+  },
+  {
+    title: "Direct from Origin",
+    description: "Sourced from highland farms and washing stations — full traceability, farm to port.",
+    icon: Sprout,
+  },
+  {
+    title: "Export Certified",
+    description: "ECX grading, ICO documentation, and phytosanitary compliance handled in-house.",
+    icon: FileCheck,
+  },
+  {
+    title: "Global Reach",
+    description: "A proven supply chain to the USA, the EU, Saudi Arabia, the Middle East, and China.",
+    icon: Globe,
+  },
 ];
 
 export type Stat = { title: string; end: number; suffix: string };
 
 export const stats: Stat[] = [
-  { title: "Gardens Completed", end: 250, suffix: "+" },
-  { title: "Client Satisfaction", end: 98, suffix: "%" },
-  { title: "Years in the Industry", end: 10, suffix: "+" },
+  { title: "Peak Altitude", end: 2300, suffix: "m" },
+  { title: "Specialty Arabica", end: 100, suffix: "%" },
+  { title: "Export Destinations", end: 20, suffix: "+" },
 ];
 
 export type Testimonial = { quote: string; name: string; role: string };
 
+/** Spotlight card: the brand promise from the founder's story (ethiopiancoffee.net/about). */
 export const featuredTestimonial: Testimonial = {
   quote:
-    "“I wanted a landscape that matched the elegance of my villa, and Verdea delivered beyond imagination. Their eco-friendly approach not only created a stunning garden but also gave me peace of mind about sustainability.”",
-  name: "Michael Carter",
-  role: "– Villa Owner",
+    "Every bag that leaves Addis Ababa carries her signature — a personal guarantee that what is inside is authentic, hand-selected, and world-class.",
+  name: "Hanan Tariq",
+  role: "– Founder & Brand Ambassador",
 };

@@ -5,18 +5,18 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import TestimonialSpotlight from "@/components/sections/TestimonialSpotlight";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "Our Projects",
-  description: "Each project reflects our passion for greenery, harmony, and sustainable outdoor design.",
+  title: pages.projects.title,
+  description: pages.projects.description,
 };
 
 // our-project.json (section numbering as in the kit, including the repeated "(2)").
 export default function ProjectsPage() {
   return (
     <>
-      <PageHero title="Our Project" image={images.greenhouseInGarden} />
+      <PageHero title={pages.projects.title} image={pages.projects.image} />
       <ProjectsSection index={2} />
       <VideoShowcase index={4} />
       <PricingSection index={2} />

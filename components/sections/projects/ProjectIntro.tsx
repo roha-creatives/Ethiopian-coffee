@@ -16,10 +16,10 @@ export default function ProjectIntro({ project }: { project: ProjectWithDetail }
         />
         <IntroColumn
           index={2}
-          label="Our Projects"
+          label={project.summary}
           heading={project.title}
           copy={project.detail.intro}
-          cta={{ label: "Get a Free Quote", href: "/contact" }}
+          cta={{ label: "Request a Sample", href: "/contact" }}
           className="lg:w-[40%]"
         />
       </div>

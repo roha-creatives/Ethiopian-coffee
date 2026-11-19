@@ -14,7 +14,7 @@ function VideoTile({ image, className = "" }: { image: Extract<WallTile, { kind:
     >
       <CoverImage src={image} sizes="(min-width: 1025px) 33vw, (min-width: 768px) 100vw, 100vw" layout="background" />
       <div className="absolute inset-0 -z-10 bg-background-accent/60" aria-hidden="true" />
-      <VideoPopupButton videoId={KIT_VIDEO_ID} variant="solid" label="Play client stories" />
+      <VideoPopupButton videoId={KIT_VIDEO_ID} variant="solid" label="Play: Farm to Your Port" />
     </div>
   );
 }

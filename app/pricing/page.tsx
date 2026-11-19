@@ -4,19 +4,18 @@ import PricingSection from "@/components/sections/PricingSection";
 import TestimonialSpotlight from "@/components/sections/TestimonialSpotlight";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import { pricingIntro } from "@/lib/content/sections";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "Pricing Plans",
-  description: pricingIntro.heading,
+  title: pages.pricing.title,
+  description: pages.pricing.description,
 };
 
 // pricing-plans.json
 export default function PricingPage() {
   return (
     <>
-      <PageHero title="Pricing Plans" image={images.harvestTomatoes} />
+      <PageHero title={pages.pricing.title} image={pages.pricing.image} />
       <PricingSection index={2} />
       <VideoShowcase index={4} />
       <WhyChooseUs index={6} />

@@ -40,8 +40,9 @@ export default function TestimonialCard({ testimonial, tone, className = "", rev
   return (
     <figure className={`flex flex-col gap-6 rounded-[20px] p-6 ${t.card} ${className}`} {...revealAttrs(reveal)}>
       <div className="flex h-[232px] flex-col gap-11 lg:h-[282px]">
-        <div className="flex gap-0.5" role="img" aria-label={`Rated ${rating} out of 5`}>
-          {Array.from({ length: rating }, (_, i) => (
+        {/* The star row keeps its height when a card has no rating, so cards stay aligned. */}
+        <div className="flex h-4 gap-0.5" {...(rating ? { role: "img", "aria-label": `Rated ${rating} out of 5` } : {})}>
+          {Array.from({ length: rating ?? 0 }, (_, i) => (
             <Star key={i} className={`size-4 ${t.stars}`} aria-hidden="true" />
           ))}
         </div>

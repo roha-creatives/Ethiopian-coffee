@@ -1,76 +1,77 @@
-// Copy for the sections reused across pages. The "(n)" index differs per page and is
-// passed by each page; everything else lives here so one edit updates every page.
+// Copy for the sections reused across pages (from ethiopiancoffee.net). The "(n)" index
+// differs per page and is passed by each page; everything else lives here so one edit
+// updates every page.
 import { images } from "@/lib/images";
 import type { Cta } from "./site";
 
 export const aboutIntro = {
-  label: "About Us",
-  heading: "At Verdea, we believe every outdoor space has the potential to flourish.",
-  copy: "With years of expertise in gardening and landscaping, our team combines creativity, craftsmanship, and sustainability to design spaces that truly inspire.",
-  highlights: ["Customized Garden Solutions", "Eco-Friendly & Sustainable Practices", "Experienced Landscape Designers"],
-  cta: { label: "Learn More", href: "/about" } satisfies Cta,
-  image: images.glassGreenhouse,
-  imageAlt: "Glass greenhouse surrounded by a lush garden",
+  label: "Our Story",
+  heading: "Signed at the source — from the birthplace of coffee to the world.",
+  copy: "Ethiopia is where coffee was born. We source Grade 1 specialty lots directly from the highlands of Sidama, Bombe, Yirgacheffe, and Guji — hand-selected, cupped to international standards, and exported green or freshly roasted.",
+  highlights: ["Grade 1 Specialty Arabica", "Hand-Selected & Cupped at Origin", "Farm-to-Port Documentation"],
+  cta: { label: "Meet the Brand", href: "/about" } satisfies Cta,
+  image: images.cherryBasket,
+  imageAlt: "Basket of freshly picked red coffee cherries in the Ethiopian highlands",
 };
 
 export const servicesIntro = {
-  label: "Our Services",
-  heading: "Green Solutions for Every Outdoor Space",
-  copy: "No matter the size of your garden, we offer services that help it bloom beautifully.",
-  cta: { label: "Get a Free Quote", href: "/contact" } satisfies Cta,
+  label: "Our Coffees",
+  heading: "Green or Roasted, Specialty Only",
+  copy: "Grade 1 is our standard — Grade 2 available on request. Every lot is cupped, certified, and shipped with full documentation.",
+  cta: { label: "Request a Sample", href: "/contact" } satisfies Cta,
 };
 
 export const videoShowcase = {
-  label: "Video Gallery",
-  heading: "A Closer Look at Our Work",
-  duration: "5-min watch",
-  copy: "We blend creativity, care, and craftsmanship to design landscapes that feel alive, vibrant, and uniquely yours.",
-  image: images.tractorThumbUp,
+  label: "How We Work",
+  heading: "Farm to Your Port",
+  duration: "Source · Select · Certify · Ship",
+  copy: "Partnering with highland farmers, cupping every lot, certifying for export, and delivering to your port with full documentation.",
+  image: images.warehouse,
 };
 
 export const projectsIntro = {
-  label: "Our Projects",
-  heading: "See How We Transform Outdoor Spaces",
-  copy: "Each project reflects our passion for greenery, harmony, and sustainable outdoor design.",
-  cta: { label: "View All Projects", href: "/projects" } satisfies Cta,
-  image: images.installingTurf,
-  imageAlt: "Landscaper rolling out fresh turf",
+  label: "Our Origins",
+  heading: "Grade 1 Lots from Ethiopia’s Finest Highlands",
+  copy: "Specialty only. Every lot is cupped, certified, and shipped with full farm-to-port documentation.",
+  cta: { label: "Full Catalogue", href: "/projects" } satisfies Cta,
+  image: images.picking,
+  imageAlt: "Hands picking ripe coffee cherries",
 };
 
 export const whyChooseUs = {
-  label: "Why Choose Us",
-  heading: "A Trusted Partner in Outdoor Transformation",
-  image: images.fixingLawnMower,
-  imageAlt: "Gardener servicing a lawn mower",
+  label: "Why Source From Us",
+  heading: "Why Ethiopian Coffee",
+  image: images.weighing,
+  imageAlt: "Weighing green coffee sacks at origin",
 };
 
-/** CTA on every dark feature band (Why Choose Us, service Key Features). */
-export const featureBandCta: Cta = { label: "Get a Free Quote", href: "/contact" };
+/** CTA on every dark feature band (Why Choose Us, Key Features). */
+export const featureBandCta: Cta = { label: "Request a Sample", href: "/contact" };
 
 export const testimonialsIntro = {
-  label: "Testimonials",
-  heading: "Trusted by Clients, Backed by Results",
-  copy: "Our reputation is built on satisfied clients and stunning landscapes.",
-  cta: { label: "Read All Testimonials", href: "/testimonials" } satisfies Cta,
-  /** Spotlight card photo; project-detail.json swaps it via a prop. */
-  image: images.mowingBackyard,
+  label: "Founder’s Promise",
+  heading: "Authentic, Hand-Selected, World-Class",
+  copy: "Ethiopian Coffee is the vision of Hanan Tariq — taking Ethiopian excellence seriously and presenting it to the world without compromise.",
+  cta: { label: "Her Full Story", href: "/about" } satisfies Cta,
+  /** Spotlight card photo (wide crop from the top; the founder portrait crops badly here). */
+  image: images.picking,
 };
 
 export const faqIntro = {
   label: "Have Questions?",
-  heading: "Find Quick Answers to Common Questions.",
-  cta: { label: "Contact Us", href: "/contact" } satisfies Cta,
-  image: images.greenhouseInGarden,
-  imageAlt: "Glass greenhouse in a vegetable garden",
+  heading: "Everything Importers Ask Us First.",
+  cta: { label: "Get in Touch", href: "/contact" } satisfies Cta,
+  image: images.parchment,
+  imageAlt: "Sun-dried parchment coffee ready for milling and export",
 };
 
 export const pricingIntro = {
-  label: "Pricing Plans",
-  heading: "Simple Plans for Every Garden",
+  label: "Ways to Buy",
+  heading: "Green, Roasted, or Your Own Label",
 };
 
-/** Shown under the photo/mission columns on About and project detail ("Visison" sic). */
+/** Shown under the photo/mission columns on About and origin detail pages. */
 export const vision = {
-  label: "Our Visison",
-  copy: "A world where every home, business, and community thrives with sustainable, functional, and inspiring landscapes.",
+  label: "Our Promise",
+  copy: "Named farms, traceable lots, and a founder’s mark on every bag — authentic, hand-selected, and world-class.",
 };

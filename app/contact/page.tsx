@@ -2,19 +2,18 @@ import type { Metadata } from "next";
 import ContactSection from "@/components/sections/contact/ContactSection";
 import FaqSection from "@/components/sections/FaqSection";
 import PageHero from "@/components/sections/PageHero";
-import { contactIntro } from "@/lib/content/contact";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: contactIntro.copy,
+  title: pages.contact.title,
+  description: pages.contact.description,
 };
 
 // contact-us.json
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Contact us" image={images.harvestTomatoes} />
+      <PageHero title={pages.contact.title} image={pages.contact.image} />
       <ContactSection />
       <FaqSection index={8} />
     </>

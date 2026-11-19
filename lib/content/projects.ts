@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
-import { featureIcons, images } from "@/lib/images";
+import { Coffee, Droplets, Mountain, Sparkles } from "lucide-react";
+import { images } from "@/lib/images";
 import type { Feature } from "./home";
 
 export type ProjectDetail = {
@@ -11,85 +12,105 @@ export type ProjectDetail = {
 export type Project = {
   slug: string;
   title: string;
+  /** Region line shown under the title. */
   summary: string;
-  client: string;
-  year: number;
-  location: string;
+  /** Spec lines shown on the card. */
+  meta: string[];
   image: StaticImageData;
-  /** Only Eco-Friendly Community Park has a detail page in the kit (project-detail.json). */
   detail?: ProjectDetail;
 };
 
-// Copy from home.json / our-project.json project cards and project-detail.json.
-export const projects: Project[] = [
+type Origin = {
+  slug: string;
+  title: string;
+  region: string;
+  grade: string;
+  process: string;
+  altitude: string;
+  notes: string;
+  bestFor: string;
+  intro: string;
+  image: StaticImageData;
+  introImage: StaticImageData;
+};
+
+// The four origins (ethiopiancoffee.net/products).
+const origins: Origin[] = [
   {
-    slug: "eco-friendly-community-park",
-    title: "Eco-Friendly Community Park",
-    summary: "A sustainable park that reduces water usage by 40%.",
-    client: "Green City Council",
-    year: 2025,
-    location: "Riverside District",
-    image: images.woodenBridge,
-    detail: {
-      intro:
-        "The Eco-Friendly Community Park project aimed to transform an underutilized urban area into a vibrant green hub. Designed with sustainability in mind, the park integrates natural landscapes, renewable features, and safe play zones for all ages.",
-      introImage: images.mowingBackyard,
-      features: [
-        {
-          title: "Sustainable Landscaping",
-          description:
-            "Native plants chosen for low maintenance and high adaptability, reducing water use while supporting local biodiversity.",
-          icon: featureIcons.gardener,
-        },
-        {
-          title: "Green Construction Materials",
-          description:
-            "Paths, benches, and play areas built from recycled and eco-friendly materials, blending durability with environmental care.",
-          icon: featureIcons.sprouts,
-        },
-        {
-          title: "Solar-Powered Lighting",
-          description:
-            "Energy-efficient solar lights illuminate pathways and gathering areas, keeping the park safe and sustainable at night.",
-          icon: featureIcons.pottedPlant,
-        },
-        {
-          title: "Family & Community Spaces",
-          description:
-            "Inclusive design with children’s play zones, fitness areas, and open lawns for family gatherings and community events.",
-          icon: featureIcons.lawnMower,
-        },
-      ],
-    },
+    slug: "sidama-bombe",
+    title: "Sidama Bombe",
+    region: "Bombe, Bensa — Sidama",
+    grade: "Grade 1",
+    process: "Washed & Natural",
+    altitude: "2,050 – 2,300 masl",
+    notes: "White florals, peach, honey, bergamot",
+    bestFor: "Competition lots, specialty filter, premium espresso",
+    intro:
+      "From the famed Bombe highlands of Bensa — among the highest coffee gardens on earth. Late-ripening cherry, slow-dried in thin layers, yielding micro-lots of remarkable clarity and sweetness. The headline of our export book.",
+    image: images.cherryBasket,
+    introImage: images.dryingBeds,
   },
   {
-    slug: "zen-garden-courtyard",
-    title: "Zen Garden Courtyard",
-    summary: "A tranquil garden for daily relaxation and meditation.",
-    client: "Tanaka Family",
-    year: 2025,
-    location: "Downtown Residence",
-    image: images.zenCourtyard,
+    slug: "yirgacheffe",
+    title: "Yirgacheffe",
+    region: "Gedeo Zone, Yirgacheffe",
+    grade: "Grade 1 & 2",
+    process: "Washed",
+    altitude: "1,800 – 2,200 masl",
+    notes: "Jasmine, lemon zest, bergamot, black tea",
+    bestFor: "Pour-over, filter, specialty espresso",
+    intro:
+      "The coffee that made Ethiopia famous among roasters. Grown in the lush Gedeo highlands and washed to crystalline cleanliness — delicate florals, bright citrus, and a silky, tea-like finish.",
+    image: images.picking,
+    introImage: images.handSorting,
   },
   {
-    slug: "rustic-country-retreat",
-    title: "Rustic Country Retreat",
-    summary: "Enhanced guest experience with timeless natural beauty.",
-    client: "Hilltop Villa Resort",
-    year: 2024,
-    location: "Countryside Hills",
-    image: images.cozyGardenDining,
+    slug: "guji",
+    title: "Guji",
+    region: "Guji Zone, Oromia",
+    grade: "Grade 1 & 2",
+    process: "Natural & Washed",
+    altitude: "1,900 – 2,350 masl",
+    notes: "Blueberry, stone fruit, dark florals, cocoa",
+    bestFor: "Single-origin espresso, filter, cold brew",
+    intro:
+      "High-altitude lots from virgin soils south of Sidama. Naturals burst with berry and ripe stone fruit; washed lots are structured and floral. Guji has become the darling of modern specialty roasters.",
+    image: images.cherryBranch,
+    introImage: images.dryingStation,
   },
   {
-    slug: "residential-landscape-upgrade",
-    title: "Residential Landscape Upgrade",
-    summary: "Improved curb appeal and increased property value.",
-    client: "Mr. & Mrs. Carter",
-    year: 2023,
-    location: "Suburban Avenue",
-    image: images.recreation,
+    slug: "sidama-classic",
+    title: "Sidama Classic",
+    region: "Sidama Region",
+    grade: "Grade 1 & 2",
+    process: "Washed & Natural",
+    altitude: "1,700 – 2,200 masl",
+    notes: "Red berry, sweet citrus, chocolate, winey",
+    bestFor: "Espresso blends, French press, cold brew",
+    intro:
+      "Full and layered, from the volcanic soils and ideal microclimate of the Sidama highlands. A dependable, complex cup that anchors blends and shines alone — our highest-volume origin.",
+    image: images.dryingBeds,
+    introImage: images.parchment,
   },
 ];
+
+export const projects: Project[] = origins.map((o) => ({
+  slug: o.slug,
+  title: o.title,
+  summary: o.region,
+  meta: [`Grade : ${o.grade}`, `Process : ${o.process}`, `Altitude : ${o.altitude}`],
+  image: o.image,
+  detail: {
+    intro: o.intro,
+    introImage: o.introImage,
+    features: [
+      { title: "Process", description: o.process, icon: Droplets },
+      { title: "Altitude", description: o.altitude, icon: Mountain },
+      { title: "Flavour Notes", description: o.notes, icon: Sparkles },
+      { title: "Best For", description: o.bestFor, icon: Coffee },
+    ],
+  },
+}));
 
 export type ProjectWithDetail = Project & { detail: ProjectDetail };
 
@@ -97,7 +118,6 @@ export function getProjectWithDetail(slug: string): ProjectWithDetail | undefine
   return projects.find((p): p is ProjectWithDetail => p.slug === slug && p.detail !== undefined);
 }
 
-/** Projects without kit detail copy link to the contact page instead of a thin page. */
 export function projectHref(project: Project): string {
   return project.detail ? `/projects/${project.slug}` : "/contact";
 }

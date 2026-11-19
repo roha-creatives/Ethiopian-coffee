@@ -9,9 +9,8 @@ import TestimonialSpotlight from "@/components/sections/TestimonialSpotlight";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import { galleryImages } from "@/lib/content/gallery";
 import { getProjectWithDetail, projects } from "@/lib/content/projects";
-import { images } from "@/lib/images";
 
-// Only projects with kit detail copy get a page; proxy.ts 404s any other slug.
+// Only projects with detail copy get a page; proxy.ts 404s any other slug.
 export async function generateStaticParams() {
   return projects.filter((p) => p.detail).map((p) => ({ slug: p.slug }));
 }
@@ -19,7 +18,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/projects/[slug]">): Promise<Metadata> {
   const project = getProjectWithDetail((await params).slug);
   if (!project) return {};
-  return { title: project.title, description: project.summary };
+  return { title: project.title, description: project.detail.intro };
 }
 
 // project-detail.json. The params read sits inside <Suspense> so client navigations to the
@@ -38,12 +37,12 @@ async function ProjectDetail({ params }: Pick<PageProps<"/projects/[slug]">, "pa
 
   return (
     <>
-      <PageHero title="Project Detail" image={images.harvestTomatoes} />
+      <PageHero title={project.title} image={project.image} />
       <ProjectIntro project={project} />
       <VideoShowcase index={4} />
       <ProjectKeyFeatures project={project} />
       <ImageMarquee images={galleryImages} className="py-[72px] lg:pt-gutter lg:pb-28" />
-      <TestimonialSpotlight index={7} image={images.communityKitchenGarden} />
+      <TestimonialSpotlight index={7} />
     </>
   );
 }

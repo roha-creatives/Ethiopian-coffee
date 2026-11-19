@@ -1,5 +1,4 @@
-// Site navigation. Elementor stores menus in WordPress, not the template JSON,
-// so the main menu mirrors screenshots/header.jpg.
+// Site navigation. Labels follow ethiopiancoffee.net; routes keep the template's paths.
 
 export type NavLink = { label: string; href: string };
 export type NavItem = NavLink & { children?: NavLink[] };
@@ -8,30 +7,32 @@ export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
-    label: "Service",
+    label: "Coffees",
     href: "/services",
     children: [
-      { label: "Our Services", href: "/services" },
-      { label: "Service Detail", href: "/services/landscape-design" },
+      { label: "Our Coffees", href: "/services" },
+      { label: "Green Coffee", href: "/services/green-coffee" },
     ],
   },
   {
-    label: "Project",
+    label: "Origins",
     href: "/projects",
     children: [
-      { label: "Our Projects", href: "/projects" },
-      { label: "Project Detail", href: "/projects/eco-friendly-community-park" },
+      { label: "Our Origins", href: "/projects" },
+      { label: "Sidama Bombe", href: "/projects/sidama-bombe" },
+      { label: "Yirgacheffe", href: "/projects/yirgacheffe" },
+      { label: "Guji", href: "/projects/guji" },
+      { label: "Sidama Classic", href: "/projects/sidama-classic" },
     ],
   },
   {
-    label: "Page",
+    label: "Explore",
     href: "/pricing",
     children: [
-      { label: "Pricing Plans", href: "/pricing" },
-      { label: "Testimonials", href: "/testimonials" },
+      { label: "Offers", href: "/pricing" },
+      { label: "Export Markets", href: "/testimonials" },
       { label: "Gallery", href: "/gallery" },
       { label: "FAQs", href: "/faqs" },
-      { label: "404 Error", href: "/404" },
     ],
   },
   {
@@ -39,29 +40,29 @@ export const mainNav: NavItem[] = [
     href: "/design-guidelines",
     children: [{ label: "Design Guidelines", href: "/design-guidelines" }],
   },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const footerNav: NavLink[] = [
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
+  { label: "Our Coffees", href: "/services" },
+  { label: "Origins", href: "/projects" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const contact = {
-  phone: "(+62) 123 456 7890",
-  phoneHref: "tel:+621234567890",
-  email: "info@yoursite.com",
+  phone: "+251 981 999 996",
+  phoneHref: "tel:+251981999996",
+  email: "sales@ethiopiancoffee.net",
 };
 
-export const socials = [
-  { network: "facebook", label: "Facebook", href: "#" },
-  { network: "x", label: "X", href: "#" },
-  { network: "youtube", label: "YouTube", href: "#" },
-  { network: "instagram", label: "Instagram", href: "#" },
-] as const;
+export type SocialNetwork = "facebook" | "x" | "youtube" | "instagram" | "whatsapp";
+
+export const socials: { network: SocialNetwork; label: string; href: string }[] = [
+  { network: "instagram", label: "Instagram @ethiopian_coffee_", href: "https://www.instagram.com/ethiopian_coffee_/" },
+  { network: "whatsapp", label: "WhatsApp +251 981 999 994", href: "https://wa.me/251981999994" },
+];
 
 export function isActive(pathname: string, item: NavItem): boolean {
   if (item.href === "/") return pathname === "/";

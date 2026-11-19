@@ -3,34 +3,31 @@ export type Faq = {
   answer: string;
 };
 
-// The kit (home.json, faqs.json) only ships an answer for the first question. Answers 2–5
-// are drafted from facts stated elsewhere in the kit — service-detail key features,
-// project-detail features, the Lawn Care service and the pricing plans — so the accordion
-// works; replace them with the client's own wording when available.
+// Answers use only facts published on ethiopiancoffee.net.
 export const faqs: Faq[] = [
   {
-    question: "How long does a landscaping project usually take?",
+    question: "What grades of coffee do you export?",
     answer:
-      "The timeline depends on the project size and complexity. Small gardens may take a few days, while larger landscapes can take several weeks.",
+      "Specialty only. Grade 1 is our standard export grade, with Grade 2 available on request — every lot is cupped and certified before it ships.",
   },
   {
-    question: "Do you provide custom garden designs?",
+    question: "Can I request cupping samples?",
     answer:
-      "Yes. Every plan is tailored to your space and taste, with personalized design concepts and 2D & 3D visualizations so you can see your future garden before construction begins.",
+      "Yes. We offer cupping samples for qualified buyers, green or roasted. Tell us your market and volumes and we will arrange samples from the lots that fit.",
   },
   {
-    question: "Can you work with eco-friendly and sustainable solutions?",
+    question: "What documentation comes with a shipment?",
     answer:
-      "Absolutely. We favour native plants chosen for low maintenance and high adaptability, water-efficient designs, and recycled, eco-friendly materials wherever possible.",
+      "Full farm-to-port documentation: ECX grading, ICO certification, and phytosanitary compliance, handled in-house for seamless import into your market.",
   },
   {
-    question: "Do you offer maintenance services after installation?",
+    question: "Which markets do you ship to?",
     answer:
-      "Yes. Our Lawn Care & Maintenance service covers reliable mowing, fertilizing, and trimming to keep your lawn fresh, green, and beautifully maintained all year.",
+      "The United States, Germany and the EU, Saudi Arabia and the GCC, the wider Middle East, and China and East Asia. If your market is not listed, talk to us — we ship worldwide.",
   },
   {
-    question: "What is included in your pricing plans?",
+    question: "Do you offer private label?",
     answer:
-      "The Essential Plan ($399 / project) includes a design consultation of up to 3 hours, basic plant selection & layout, garden design up to 80 m², and a maintenance guide. The Premium Plan ($999 / project) adds a consultation of up to 6 hours, 2D & 3D landscape concepts, full yard design up to 250 m², a planting, eco-lighting & irrigation plan, and 1-month post-project support. Custom plans are tailored to you.",
+      "Yes. Green or roasted, packed under your own brand — we handle sourcing, roasting, packaging, and export documentation end to end.",
   },
 ];

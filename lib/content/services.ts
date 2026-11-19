@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
-import { featureIcons, images } from "@/lib/images";
+import { Droplets, FileCheck, FlaskConical, Package } from "lucide-react";
+import { images } from "@/lib/images";
 import type { Feature } from "./home";
 
 export type ServiceDetail = {
@@ -7,6 +8,7 @@ export type ServiceDetail = {
   intro: string;
   features: Feature[];
   featuresImage: StaticImageData;
+  featuresImageAlt: string;
 };
 
 export type Service = {
@@ -14,60 +16,61 @@ export type Service = {
   title: string;
   excerpt: string;
   image: StaticImageData;
-  /** Only Landscape Design has a detail page in the kit (service-detail.json). */
+  /** Products with a detail page; the rest link to the contact page. */
   detail?: ServiceDetail;
 };
 
-// Copy from home.json / our-service.json / service-detail.json.
+// Product lines (ethiopiancoffee.net and /products).
 export const services: Service[] = [
   {
-    slug: "landscape-design",
-    title: "Landscape Design",
+    slug: "green-coffee",
+    title: "Green Coffee",
     excerpt:
-      "Creative planning and professional layout to transform your outdoor space into a harmonious and functional garden.",
-    image: images.communityKitchenGarden,
+      "Unroasted Grade 1 specialty Arabica in GrainPro-lined export bags — our core offer for importers and roasters worldwide.",
+    image: images.parchment,
     detail: {
-      heroImage: images.gardenPruning,
+      heroImage: images.warehouse,
       intro:
-        "We create landscapes that are not just beautiful but also sustainable. From concept to final design, every project is tailored to your lifestyle, space, and vision. Whether it’s a small residential garden or a large commercial property, our designs focus on harmony with nature.",
+        "Unroasted specialty Arabica is the heart of our business. Grade 1 lots from Sidama, Bombe, Yirgacheffe, and Guji — washed or natural — hand-selected at origin and cupped to international specialty standards before they ever reach a container.",
       features: [
         {
-          title: "Personalized Design Concepts",
-          description: "Every plan is tailored to your space and taste.",
-          icon: featureIcons.gardener,
+          title: "Washed & Natural",
+          description: "Both processes available across our origins, Grade 1 first with Grade 2 on request.",
+          icon: Droplets,
         },
         {
-          title: "2D & 3D Visualizations",
-          description: "See your future garden before construction begins.",
-          icon: featureIcons.sprouts,
+          title: "GrainPro Export Bags",
+          description: "Shipped in GrainPro-lined bags that protect freshness from origin to your port.",
+          icon: Package,
         },
         {
-          title: "Eco-Friendly Solutions",
-          description: "Sustainable plant selection and water-efficient designs.",
-          icon: featureIcons.pottedPlant,
+          title: "Cupping Samples",
+          description: "Samples from the lots that fit your market and volumes, on request for qualified buyers.",
+          icon: FlaskConical,
         },
         {
-          title: "Modern Aesthetic Integration",
-          description: "Designs that match contemporary lifestyles.",
-          icon: featureIcons.lawnMower,
+          title: "Farm-to-Port Documentation",
+          description: "ECX grading, ICO certification, and phytosanitary compliance on every shipment.",
+          icon: FileCheck,
         },
       ],
-      featuresImage: images.installingTurf,
+      featuresImage: images.weighing,
+      featuresImageAlt: "Weighing green coffee sacks at origin",
     },
   },
   {
-    slug: "garden-installation",
-    title: "Garden Installation",
+    slug: "roasted-collection",
+    title: "Roasted Collection",
     excerpt:
-      "Expert installation with healthy plants, premium soil, and natural arrangements to create a thriving outdoor paradise.",
-    image: images.gardenPruning,
+      "The same lots, roasted to order in Addis Ababa — light, medium, or dark — whole bean or ground, from retail packs to bulk.",
+    image: images.packBeansNavy,
   },
   {
-    slug: "lawn-care-maintenance",
-    title: "Lawn Care & Maintenance",
+    slug: "private-label",
+    title: "Private Label",
     excerpt:
-      "Reliable mowing, fertilizing, and trimming services to keep your lawn fresh, green, and beautifully maintained all year.",
-    image: images.tractorWalking,
+      "Green or roasted, packed under your own brand — sourcing, roasting, packaging, and export documentation end to end.",
+    image: images.packLineDark,
   },
 ];
 
@@ -77,7 +80,7 @@ export function getServiceWithDetail(slug: string): ServiceWithDetail | undefine
   return services.find((s): s is ServiceWithDetail => s.slug === slug && s.detail !== undefined);
 }
 
-/** Services without kit detail copy link to the contact page instead of a thin page. */
+/** Products without a detail page link to the contact page instead of a thin page. */
 export function serviceHref(service: Service): string {
   return service.detail ? `/services/${service.slug}` : "/contact";
 }

@@ -1,10 +1,10 @@
 import type { SVGProps } from "react";
-import { socials } from "@/lib/navigation";
+import { socials, type SocialNetwork } from "@/lib/navigation";
 
-// lucide-react 1.x no longer ships brand marks, so these are minimal inline SVGs.
-type Network = (typeof socials)[number]["network"];
+// lucide-react 1.x no longer ships brand marks, so these are minimal inline SVGs. Which ones
+// show is set by `socials` in lib/navigation.ts.
 
-const icons: Record<Network, (props: SVGProps<SVGSVGElement>) => React.JSX.Element> = {
+const icons: Record<SocialNetwork, (props: SVGProps<SVGSVGElement>) => React.JSX.Element> = {
   facebook: (props) => (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
       <path d="M12 2a10 10 0 0 0-1.56 19.88v-7H7.9V12h2.54V9.8c0-2.5 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v7A10 10 0 0 0 12 2Z" />
@@ -28,6 +28,11 @@ const icons: Record<Network, (props: SVGProps<SVGSVGElement>) => React.JSX.Eleme
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+    </svg>
+  ),
+  whatsapp: (props) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.44 5 5.13-1.35A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.04.8.81-2.96-.2-.31a8.2 8.2 0 1 1 6.91 3.8Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.41-.56-.42h-.48a.92.92 0 0 0-.66.31 2.78 2.78 0 0 0-.87 2.07 4.84 4.84 0 0 0 1.01 2.56 11.1 11.1 0 0 0 4.24 3.75c1.58.68 2.2.74 2.99.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.29Z" />
     </svg>
   ),
 };

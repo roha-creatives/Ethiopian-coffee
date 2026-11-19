@@ -6,19 +6,18 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import { galleryImages } from "@/lib/content/gallery";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "Gallery",
-  description:
-    "Explore our portfolio of modern landscapes and gardens designed to inspire harmony between nature and living spaces.",
+  title: pages.gallery.title,
+  description: pages.gallery.description,
 };
 
 // gallery.json
 export default function GalleryPage() {
   return (
     <>
-      <PageHero title="Gallery" image={images.mowingBackyard} />
+      <PageHero title={pages.gallery.title} image={pages.gallery.image} />
       <GalleryIntro />
       <VideoShowcase index={4} />
       <ImageMarquee images={galleryImages} className="py-[72px] lg:py-gutter" />

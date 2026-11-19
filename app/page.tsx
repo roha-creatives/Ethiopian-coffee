@@ -9,7 +9,7 @@ import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 
 export const metadata: Metadata = {
-  title: { absolute: "Verdea — Green Designs for Modern Living" },
+  title: { absolute: "Ethiopian Coffee by Hanan Tarq | Specialty Coffee Exporter, Ethiopia" },
 };
 
 // home.json: sections numbered (2)–(8) after the hero, as in the kit.

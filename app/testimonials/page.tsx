@@ -3,19 +3,18 @@ import FaqSection from "@/components/sections/FaqSection";
 import PageHero from "@/components/sections/PageHero";
 import TestimonialSpotlight from "@/components/sections/TestimonialSpotlight";
 import TestimonialWall from "@/components/sections/TestimonialWall";
-import { testimonialsIntro } from "@/lib/content/sections";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "Testimonials",
-  description: testimonialsIntro.copy,
+  title: pages.testimonials.title,
+  description: pages.testimonials.description,
 };
 
 // testimonials.json
 export default function TestimonialsPage() {
   return (
     <>
-      <PageHero title="Testimonials" image={images.harvestTomatoes} />
+      <PageHero title={pages.testimonials.title} image={pages.testimonials.image} />
       <TestimonialSpotlight index={2} />
       <TestimonialWall />
       <FaqSection index={8} />

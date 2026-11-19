@@ -1,5 +1,4 @@
 import ArrowCircleLink from "@/components/ui/ArrowCircleLink";
-import MaskIcon from "@/components/ui/MaskIcon";
 import type { Feature } from "@/lib/content/home";
 import { alternate, reveal } from "@/lib/reveal";
 
@@ -37,7 +36,7 @@ export default function FeatureList({ items, tone, href, copyWidth = "narrow" }:
           className="flex flex-col items-start justify-between gap-gutter border-white/10 md:flex-row [&:not(:first-child)]:border-t [&:not(:first-child)]:pt-8"
         >
           <div className="shrink-0 rounded-2xl bg-primary p-4">
-            <MaskIcon src={item.icon} className="size-16 bg-brand-50" />
+            <item.icon className="size-16 text-brand-50" strokeWidth={1.25} aria-hidden="true" />
           </div>
           <div className={copyWidths[copyWidth]}>
             <h3 className={`mb-2.5 text-h5 ${t.title}`}>{item.title}</h3>

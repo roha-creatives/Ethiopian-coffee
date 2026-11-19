@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import FaqSection from "@/components/sections/FaqSection";
 import PageHero from "@/components/sections/PageHero";
-import { faqIntro } from "@/lib/content/sections";
-import { images } from "@/lib/images";
+import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: "FAQs",
-  description: faqIntro.heading,
+  title: pages.faqs.title,
+  description: pages.faqs.description,
 };
 
 // faqs.json
 export default function FaqsPage() {
   return (
     <>
-      <PageHero title="FAQs" image={images.installingTurf} />
+      <PageHero title={pages.faqs.title} image={pages.faqs.image} />
       <FaqSection index={8} />
     </>
   );
