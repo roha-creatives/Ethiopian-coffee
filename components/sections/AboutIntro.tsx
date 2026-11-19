@@ -3,21 +3,33 @@ import CoverImage from "@/components/ui/CoverImage";
 import IconList from "@/components/ui/IconList";
 import SectionLabel from "@/components/ui/SectionLabel";
 import StatCounter from "@/components/ui/StatCounter";
+import type { StaticImageData } from "next/image";
 import { stats } from "@/lib/content/home";
 import { aboutIntro } from "@/lib/content/sections";
 import { reveal } from "@/lib/reveal";
 
 // About block (home.json, about-us.json): label + tall image (30%) beside heading,
-// copy, highlights and counters (60%).
-export default function AboutIntro({ index = 2 }: { index?: number }) {
+// copy, highlights and counters (60%). `image` swaps the photo and `cta={false}` drops the
+// button, for one page only.
+export default function AboutIntro({
+  index = 2,
+  image = aboutIntro.image,
+  imageAlt = aboutIntro.imageAlt,
+  cta = true,
+}: {
+  index?: number;
+  image?: StaticImageData;
+  imageAlt?: string;
+  cta?: boolean;
+}) {
   return (
     <section className="section-y">
       <div className="container-site flex flex-col justify-between gap-12 lg:flex-row lg:gap-gutter">
         <div className="flex w-full flex-col justify-between gap-gutter lg:w-[30%]">
           <SectionLabel index={index} label={aboutIntro.label} reveal />
           <CoverImage
-            src={aboutIntro.image}
-            alt={aboutIntro.imageAlt}
+            src={image}
+            alt={imageAlt}
             sizes="(min-width: 1025px) 30vw, 100vw"
             reveal={{ delay: 200 }}
             className="h-[350px] rounded-2xl md:h-[400px] lg:h-[500px]"
@@ -34,9 +46,11 @@ export default function AboutIntro({ index = 2 }: { index?: number }) {
             <IconList items={aboutIntro.highlights} variant="highlight" className="max-md:w-full" reveal={{ delay: 200 }} />
           </div>
 
-          <Button href={aboutIntro.cta.href} variant="muted" arrow className="self-start" reveal>
-            {aboutIntro.cta.label}
-          </Button>
+          {cta && (
+            <Button href={aboutIntro.cta.href} variant="muted" arrow className="self-start" reveal>
+              {aboutIntro.cta.label}
+            </Button>
+          )}
 
           <hr className="border-border" {...reveal()} />
 
