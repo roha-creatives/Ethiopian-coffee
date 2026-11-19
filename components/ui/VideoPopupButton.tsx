@@ -4,13 +4,14 @@ import { useRef, useState } from "react";
 import { Play, X } from "lucide-react";
 import { revealAttrs, type RevealSpec } from "@/lib/reveal";
 
-// ElementsKit video popup buttons as styled in the kit. The glow is a ::before pulse kept
-// behind the button (isolate + -z-10) so it haloes outward instead of tinting the face.
+// ElementsKit video popup buttons as styled in the kit. The glow is a sibling span placed
+// before the button inside a wrapper, so it always paints behind the button face (a pseudo-
+// element of the button would paint over its own background) and haloes outward.
 const variants = {
   /** Hero / Video Gallery: 60px, ringed play icon, Primary 10% glow. */
-  ring: "size-[60px] bg-lemon-50 text-primary before:bg-lemon-10 hover:bg-primary hover:text-lemon-50",
+  ring: { button: "size-[60px] bg-lemon-50 text-primary hover:bg-primary hover:text-lemon-50", glow: "bg-lemon-10" },
   /** Testimonial wall tiles: 80px, solid Secondary 70% play icon, Primary 70% glow. */
-  solid: "size-20 bg-lemon-50 text-leaf-70 before:bg-lemon-70 hover:bg-leaf-50 hover:text-lemon-50",
+  solid: { button: "size-20 bg-lemon-50 text-leaf-70 hover:bg-leaf-50 hover:text-lemon-50", glow: "bg-lemon-70" },
 };
 
 type VideoPopupButtonProps = {
@@ -41,21 +42,26 @@ export default function VideoPopupButton({
 
   return (
     <>
-      <button
-        type="button"
-        onClick={show}
-        aria-label={label}
-        {...revealAttrs(reveal)}
-        className={`relative isolate flex items-center justify-center rounded-full transition-colors before:absolute before:inset-0 before:-z-10 before:animate-glow before:rounded-full ${variants[variant]} ${className}`}
-      >
-        {variant === "ring" ? (
-          <span className="relative flex size-6 items-center justify-center rounded-full border-[1.5px] border-current">
-            <Play className="ml-px size-2.5 fill-current" aria-hidden="true" />
-          </span>
-        ) : (
-          <Play className="relative ml-0.5 size-5 fill-current" aria-hidden="true" />
-        )}
-      </button>
+      <span className={`relative inline-flex rounded-full ${className}`} {...revealAttrs(reveal)}>
+        <span
+          className={`pointer-events-none absolute inset-0 animate-glow rounded-full ${variants[variant].glow}`}
+          aria-hidden="true"
+        />
+        <button
+          type="button"
+          onClick={show}
+          aria-label={label}
+          className={`relative flex items-center justify-center rounded-full transition-colors ${variants[variant].button}`}
+        >
+          {variant === "ring" ? (
+            <span className="flex size-6 items-center justify-center rounded-full border-[1.5px] border-current">
+              <Play className="ml-px size-2.5 fill-current" aria-hidden="true" />
+            </span>
+          ) : (
+            <Play className="ml-0.5 size-5 fill-current" aria-hidden="true" />
+          )}
+        </button>
+      </span>
 
       <dialog
         ref={dialogRef}
