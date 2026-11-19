@@ -24,7 +24,7 @@ export default function ProjectKeyFeatures({ project }: { project: ProjectWithDe
         </div>
 
         <div className="lg:shrink lg:basis-full">
-          <FeatureList items={project.detail.features} tone="light" href="/projects" copyWidth="wide" />
+          <FeatureList items={project.detail.features} tone="light" href="/origins" copyWidth="wide" />
         </div>
       </div>
     </section>

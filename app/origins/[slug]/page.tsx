@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   return projects.filter((p) => p.detail).map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps<"/projects/[slug]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/origins/[slug]">): Promise<Metadata> {
   const project = getProjectWithDetail((await params).slug);
   if (!project) return {};
   return { title: project.title, description: project.detail.intro };
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/projects/[slug]">
 
 // project-detail.json. The params read sits inside <Suspense> so client navigations to the
 // route aren't blocked on URL data (Cache Components); listed slugs still fully prerender.
-export default function ProjectDetailPage({ params }: PageProps<"/projects/[slug]">) {
+export default function ProjectDetailPage({ params }: PageProps<"/origins/[slug]">) {
   return (
     <Suspense>
       <ProjectDetail params={params} />
@@ -31,13 +31,13 @@ export default function ProjectDetailPage({ params }: PageProps<"/projects/[slug
   );
 }
 
-async function ProjectDetail({ params }: Pick<PageProps<"/projects/[slug]">, "params">) {
+async function ProjectDetail({ params }: Pick<PageProps<"/origins/[slug]">, "params">) {
   const project = getProjectWithDetail((await params).slug);
   if (!project) notFound();
 
   return (
     <>
-      <PageHero title={project.title} image={project.image} />
+      <PageHero title={project.title} intro={project.detail.tagline} image={project.image} />
       <ProjectIntro project={project} />
       <VideoShowcase index={4} />
       <ProjectKeyFeatures project={project} />

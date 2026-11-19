@@ -7,15 +7,15 @@ import VideoShowcase from "@/components/sections/VideoShowcase";
 import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: pages.services.title,
-  description: pages.services.description,
+  title: pages.coffees.title,
+  description: pages.coffees.description,
 };
 
 // our-service.json (section numbering as in the kit, including the repeated "(4)").
 export default function ServicesPage() {
   return (
     <>
-      <PageHero title={pages.services.title} image={pages.services.image} />
+      <PageHero title={pages.coffees.title} intro={pages.coffees.intro} image={pages.coffees.image} imagePosition="center" splitImage />
       <ServicesSection index={1} />
       <ProjectsSection index={2} />
       <VideoShowcase index={4} />

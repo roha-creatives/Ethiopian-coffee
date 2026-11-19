@@ -1,12 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { projects } from "@/lib/content/projects";
-import { services } from "@/lib/content/services";
 
 // With Cache Components the prerendered shell streams with a 200 before a page can call
 // notFound(), so unknown detail slugs are rejected here, before rendering starts.
 const detailSlugs: Record<string, Set<string>> = {
-  services: new Set(services.filter((s) => s.detail).map((s) => s.slug)),
-  projects: new Set(projects.filter((p) => p.detail).map((p) => p.slug)),
+  origins: new Set(projects.filter((p) => p.detail).map((p) => p.slug)),
 };
 
 export function proxy(request: NextRequest) {
@@ -18,5 +16,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/services/:slug", "/projects/:slug"],
+  matcher: ["/origins/:slug"],
 };

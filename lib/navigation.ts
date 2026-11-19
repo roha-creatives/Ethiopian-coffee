@@ -6,33 +6,16 @@ export type NavItem = NavLink & { children?: NavLink[] };
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  {
-    label: "Coffees",
-    href: "/services",
-    children: [
-      { label: "Our Coffees", href: "/services" },
-      { label: "Green Coffee", href: "/services/green-coffee" },
-    ],
-  },
+  { label: "Coffees", href: "/coffees" },
   {
     label: "Origins",
-    href: "/projects",
+    href: "/origins",
     children: [
-      { label: "Our Origins", href: "/projects" },
-      { label: "Sidama Bombe", href: "/projects/sidama-bombe" },
-      { label: "Yirgacheffe", href: "/projects/yirgacheffe" },
-      { label: "Guji", href: "/projects/guji" },
-      { label: "Sidama Classic", href: "/projects/sidama-classic" },
-    ],
-  },
-  {
-    label: "Explore",
-    href: "/pricing",
-    children: [
-      { label: "Offers", href: "/pricing" },
-      { label: "Export Markets", href: "/testimonials" },
-      { label: "Gallery", href: "/gallery" },
-      { label: "FAQs", href: "/faqs" },
+      { label: "Our Origins", href: "/origins" },
+      { label: "Sidama Bombe", href: "/origins/sidama-bombe" },
+      { label: "Yirgacheffe", href: "/origins/yirgacheffe" },
+      { label: "Guji", href: "/origins/guji" },
+      { label: "Sidama Classic", href: "/origins/sidama-classic" },
     ],
   },
   {
@@ -45,8 +28,8 @@ export const mainNav: NavItem[] = [
 
 export const footerNav: NavLink[] = [
   { label: "About Us", href: "/about" },
-  { label: "Our Coffees", href: "/services" },
-  { label: "Origins", href: "/projects" },
+  { label: "Our Coffees", href: "/coffees" },
+  { label: "Origins", href: "/origins" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];

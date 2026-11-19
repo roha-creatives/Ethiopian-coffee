@@ -6,15 +6,15 @@ import TestimonialWall from "@/components/sections/TestimonialWall";
 import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: pages.testimonials.title,
-  description: pages.testimonials.description,
+  title: pages.exportMarkets.title,
+  description: pages.exportMarkets.description,
 };
 
 // testimonials.json
 export default function TestimonialsPage() {
   return (
     <>
-      <PageHero title={pages.testimonials.title} image={pages.testimonials.image} />
+      <PageHero title={pages.exportMarkets.title} intro={pages.exportMarkets.intro} image={pages.exportMarkets.image} />
       <TestimonialSpotlight index={2} />
       <TestimonialWall />
       <FaqSection index={8} />
