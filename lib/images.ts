@@ -18,6 +18,13 @@ import packLineDark from "@/public/images/brand/pack-line-dark.jpg";
 import packShelf from "@/public/images/brand/pack-shelf.jpg";
 import tote from "@/public/images/brand/tote.jpg";
 import hanan from "@/public/images/brand/hanan.jpg";
+import packPair from "@/public/images/brand/pack-pair.webp";
+import fingerprintMark from "@/public/images/brand/fingerprint-mark.png";
+import coffeeCeremony from "@/public/images/brand/coffee-ceremony.webp";
+import exportWarehouse from "@/public/images/brand/export-warehouse.jpg";
+import hananWindow from "@/public/images/brand/hanan-window.webp";
+import hananServing from "@/public/images/brand/hanan-serving.webp";
+import hananOffering from "@/public/images/brand/hanan-offering.webp";
 
 export const images = {
   cherryBasket,
@@ -38,6 +45,13 @@ export const images = {
   packShelf,
   tote,
   hanan,
+  packPair,
+  fingerprintMark,
+  coffeeCeremony,
+  exportWarehouse,
+  hananWindow,
+  hananServing,
+  hananOffering,
 };
 
 /** YouTube video behind every play button (still the template's clip; replace with a brand video). */
