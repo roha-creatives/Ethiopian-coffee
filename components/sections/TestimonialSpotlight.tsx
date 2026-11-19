@@ -18,7 +18,7 @@ export default function TestimonialSpotlight({
 }) {
   const { quote, name, role } = featuredTestimonial;
   return (
-    <section className="section-y bg-greyscale-10">
+    <section className="section-y bg-ink-10">
       <div className="container-site flex flex-col gap-16">
         <SplitHeader index={index} {...testimonialsIntro} asideWidth="lg:w-[30%]" revealMode="columns" />
 
@@ -30,10 +30,10 @@ export default function TestimonialSpotlight({
           <div className="absolute inset-0 -z-10 bg-background-accent/25" aria-hidden="true" />
 
           <figure className="flex w-full flex-col items-start gap-gutter rounded-2xl bg-white/10 p-4 backdrop-blur-md md:p-12 lg:w-[49%]">
-            <Quote className="size-12 text-lemon-50" strokeWidth={1.25} aria-hidden="true" />
+            <Quote className="size-12 text-brand-50" strokeWidth={1.25} aria-hidden="true" />
             <blockquote className="text-big-text text-background">{quote}</blockquote>
             <figcaption>
-              <div className="font-heading text-h5 text-greyscale-10">{name}</div>
+              <div className="font-heading text-h5 text-ink-10">{name}</div>
               <div className="font-body text-subtitle text-accent capitalize">{role}</div>
             </figcaption>
           </figure>

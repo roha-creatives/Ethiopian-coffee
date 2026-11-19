@@ -11,7 +11,7 @@ const variants = {
     "size-24 md:size-32 lg:size-48 border-text text-text hover:border-primary hover:text-primary [&_svg]:size-20 md:[&_svg]:size-[108px] lg:[&_svg]:size-40 [&_svg]:-rotate-45",
   /** Feature rows on dark: 32px icon, Greyscale 30% ring → Primary 50% fill on hover. */
   feature:
-    "size-16 border-accent text-accent hover:border-text hover:bg-lemon-50 hover:text-text [&_svg]:size-12",
+    "size-16 border-accent text-accent hover:border-text hover:bg-brand-50 hover:text-text [&_svg]:size-12",
 };
 
 type ArrowCircleLinkProps = {

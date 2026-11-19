@@ -9,7 +9,7 @@ import { reveal } from "@/lib/reveal";
 // intro row, then one bordered row per service: image 25% · copy 40% · arrow ring.
 export default function ServicesSection({ index }: { index: number }) {
   return (
-    <section className="section-y bg-greyscale-10">
+    <section className="section-y bg-ink-10">
       <div className="container-site flex flex-col gap-12">
         <SplitHeader index={index} {...servicesIntro} asideWidth="lg:w-[31%]" />
 

@@ -11,14 +11,14 @@ function PlanHeading({ name, tagline, dark, reveal }: { name: string; tagline: s
   return (
     <div {...revealAttrs(reveal)}>
       <div className={`mb-3 text-body ${dark ? "text-accent" : "text-text"}`}>{name}</div>
-      <h3 className={`text-h4 ${dark ? "text-lemon-50" : "text-primary"}`}>{tagline}</h3>
+      <h3 className={`text-h4 ${dark ? "text-brand-50" : "text-primary"}`}>{tagline}</h3>
     </div>
   );
 }
 
 function PlanCard({ plan }: { plan: PricingPlan }) {
   return (
-    <article className="flex w-full flex-col justify-between gap-gutter rounded-2xl bg-greyscale-10 p-gutter md:w-[calc(50%-12px)] lg:w-auto lg:flex-1">
+    <article className="flex w-full flex-col justify-between gap-gutter rounded-2xl bg-ink-10 p-gutter md:w-[calc(50%-12px)] lg:w-auto lg:flex-1">
       <div className="flex flex-col gap-12">
         <PlanHeading name={plan.name} tagline={plan.tagline} reveal />
         <IconList items={plan.features} variant="plan" reveal={{ delay: 200 }} />
@@ -46,7 +46,7 @@ export default function PricingSection({ index }: { index: number }) {
           <article className="flex min-h-[600px] w-full flex-col justify-between gap-gutter rounded-2xl bg-background-accent p-gutter lg:w-auto lg:flex-1">
             <div className="flex flex-col items-start gap-gutter">
               <PlanHeading name={customPlan.name} tagline={customPlan.tagline} dark reveal />
-              <p className="mb-paragraph text-body indent-lead text-text">{customPlan.description}</p>
+              <p className="mb-paragraph text-body indent-lead text-accent">{customPlan.description}</p>
               <Button href={customPlan.cta.href} arrow reveal={{ delay: 400 }}>
                 {customPlan.cta.label}
               </Button>

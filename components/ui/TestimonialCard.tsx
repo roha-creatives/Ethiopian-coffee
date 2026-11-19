@@ -7,16 +7,16 @@ const tones = {
   /** Greyscale 70% card. */
   dark: {
     card: "bg-secondary",
-    stars: "fill-lemon-50 text-lemon-50",
-    quote: "text-greyscale-10",
-    name: "text-greyscale-10",
+    stars: "fill-brand-50 text-brand-50",
+    quote: "text-ink-10",
+    name: "text-ink-10",
     role: "text-accent",
     watermark: "text-text",
   },
   /** Greyscale 10% card. */
   light: {
-    card: "bg-greyscale-10",
-    stars: "fill-lemon-90 text-lemon-90",
+    card: "bg-ink-10",
+    stars: "fill-brand-90 text-brand-90",
     quote: "text-text",
     name: "text-secondary",
     role: "text-text",

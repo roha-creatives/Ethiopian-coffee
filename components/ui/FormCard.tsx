@@ -16,7 +16,7 @@ export default function FormCard({
     <div className={`flex w-full flex-col gap-gutter rounded-[30px] bg-panel p-8 ${className}`}>
       {title && (
         <>
-          <h3 className="text-h5 text-lemon-30">{title}</h3>
+          <h3 className="text-h5 text-brand-30">{title}</h3>
           <hr className="border-secondary" />
         </>
       )}

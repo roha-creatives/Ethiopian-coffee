@@ -43,7 +43,7 @@ export default function SocialIcons() {
             <a
               href={href}
               aria-label={label}
-              className="flex size-[72px] items-center justify-center rounded-full bg-lemon-50 text-primary transition-colors hover:bg-primary hover:text-lemon-50"
+              className="flex size-[72px] items-center justify-center rounded-full bg-brand-50 text-primary transition-colors hover:bg-primary hover:text-brand-50"
             >
               <Icon className="size-6" aria-hidden="true" />
             </a>

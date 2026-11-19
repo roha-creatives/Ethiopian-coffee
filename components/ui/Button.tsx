@@ -16,11 +16,11 @@ const sizes = {
 
 const variants = {
   /** Global default: Primary 50% fill. */
-  primary: "border-lemon-50 bg-lemon-50 text-primary hover:border-primary hover:bg-primary hover:text-lemon-50",
+  primary: "border-brand-50 bg-brand-50 text-primary hover:border-primary hover:bg-primary hover:text-brand-50",
   /** "Learn More" / "Read More": Border-colour fill. */
-  muted: "border-border bg-border text-primary hover:border-primary hover:bg-primary hover:text-lemon-50",
+  muted: "border-border bg-border text-primary hover:border-primary hover:bg-primary hover:text-brand-50",
   /** Hero secondary: transparent with Primary 50% outline, for dark backgrounds. */
-  outline: "border-lemon-50 bg-transparent text-lemon-50 hover:border-background hover:bg-background hover:text-primary",
+  outline: "border-brand-50 bg-transparent text-brand-50 hover:border-background hover:bg-background hover:text-primary",
 };
 
 export type ButtonVariant = keyof typeof variants;

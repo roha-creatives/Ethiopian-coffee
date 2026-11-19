@@ -9,7 +9,7 @@ import { reveal } from "@/lib/reveal";
 // statement on the left; core values list on the right; 96px apart (48px stacked).
 export default function MissionValues() {
   return (
-    <section className="section-y bg-greyscale-10">
+    <section className="section-y bg-ink-10">
       <div className="container-site flex flex-col gap-12 lg:flex-row lg:gap-24">
         <div className="flex flex-col gap-gutter lg:flex-1">
           <SectionLabel index={3} label={mission.label} reveal />

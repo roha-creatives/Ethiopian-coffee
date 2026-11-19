@@ -32,7 +32,7 @@ export default function PageHero({ title, image, variant = "page" }: PageHeroPro
       <div className="container-site flex flex-col justify-end gap-16 max-md:justify-center lg:flex-row lg:justify-between lg:gap-gutter">
         <div className="flex w-full flex-col items-start justify-end gap-gutter overflow-hidden lg:w-[660px]">
           <HeroBadge reveal={{ delay: 300 }}>{hero.badge}</HeroBadge>
-          <h1 className="w-full text-greyscale-10">{title}</h1>
+          <h1 className="w-full text-ink-10">{title}</h1>
           <p className="mb-paragraph w-full text-big-text indent-lead text-background md:w-[92%]" {...reveal(200)}>
             {hero.intro}
           </p>
@@ -47,15 +47,15 @@ export default function PageHero({ title, image, variant = "page" }: PageHeroPro
                   Back to Home
                 </Button>
               ) : (
-                <Link href="/" className="font-body text-subtitle text-lemon-10 capitalize hover:text-leaf-30">
+                <Link href="/" className="font-body text-subtitle text-brand-10 capitalize hover:text-support-30">
                   Home
                 </Link>
               )}
             </li>
-            <li aria-hidden="true" className="flex size-8 items-center justify-center rounded-full bg-leaf-30 text-primary">
+            <li aria-hidden="true" className="flex size-8 items-center justify-center rounded-full bg-support-30 text-primary">
               <ArrowLeft className="size-4" />
             </li>
-            <li aria-current="page" className="text-big-text text-lemon-50">
+            <li aria-current="page" className="text-big-text text-brand-50">
               {title}
             </li>
           </ol>

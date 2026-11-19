@@ -5,7 +5,7 @@ import type { RevealSpec } from "@/lib/reveal";
 export default function HeroBadge({ children, reveal }: { children: string; reveal?: RevealSpec }) {
   return (
     <GlassChip bordered={false} className="font-body text-subtitle capitalize" reveal={reveal}>
-      <span className="size-2 rounded-full bg-lemon-50" aria-hidden="true" />
+      <span className="size-2 rounded-full bg-brand-50" aria-hidden="true" />
       {children}
     </GlassChip>
   );

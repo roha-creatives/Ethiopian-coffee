@@ -1,58 +1,35 @@
-// Design guidelines page (design-guidelines.json). Swatches and specimens reference the
-// Tailwind tokens directly, so the page always reflects tailwind.config.ts.
+// Design guidelines page (design-guidelines.json). The palette is generated from
+// lib/theme/colors.ts and type specimens use the Tailwind type tokens, so the page always
+// reflects the live design system.
+import { base, brand, ink, rampLabels, support, system, type Ramp, type Step } from "@/lib/theme/colors";
 
-export type Swatch = { name: string; className: string };
+export type Swatch = { name: string; token: string; hex: string };
 export type PaletteGroup = { title: string; description: string; columns: string; swatches: Swatch[] };
 
 const interactive = "This color is used for all important interactive elements like Buttons, CTAs, links";
+const steps: Step[] = [90, 70, 50, 30, 10];
+
+const ramp = (key: keyof typeof rampLabels, values: Ramp): Swatch[] =>
+  steps.map((step) => ({ name: `${rampLabels[key].swatch} ${step}%`, token: `${key}-${step}`, hex: values[step] }));
 
 export const palette: PaletteGroup[] = [
+  { title: rampLabels.brand.title, description: interactive, columns: "md:grid-cols-5", swatches: ramp("brand", brand) },
+  { title: rampLabels.support.title, description: interactive, columns: "md:grid-cols-5", swatches: ramp("support", support) },
   {
-    title: "Primary color",
-    description: interactive,
-    columns: "md:grid-cols-5",
-    swatches: [
-      { name: "Primary 90%", className: "bg-lemon-90" },
-      { name: "Primary 70%", className: "bg-lemon-70" },
-      { name: "Primary 50%", className: "bg-lemon-50" },
-      { name: "Primary 30%", className: "bg-lemon-30" },
-      { name: "Primary 10%", className: "bg-lemon-10" },
-    ],
-  },
-  {
-    title: "Secondary color",
-    description: interactive,
-    columns: "md:grid-cols-5",
-    swatches: [
-      { name: "Secondary 90%", className: "bg-leaf-90" },
-      { name: "Secondary 70%", className: "bg-leaf-70" },
-      { name: "Secondary 50%", className: "bg-leaf-50" },
-      { name: "Secondary 30%", className: "bg-leaf-30" },
-      // The kit fills this swatch with Secondary 30% (#BBF451), not its own #ECFCCA.
-      { name: "Secondary 10%", className: "bg-leaf-30" },
-    ],
-  },
-  {
-    title: "Greyscale",
+    title: rampLabels.ink.title,
     description: "Gray tones are the essence of the UI. Used for text or cards, etc",
     columns: "md:grid-cols-5",
-    swatches: [
-      { name: "Greyscale 90%", className: "bg-greyscale-90" },
-      { name: "Greyscale 70%", className: "bg-greyscale-70" },
-      { name: "Greyscale 50%", className: "bg-greyscale-50" },
-      { name: "Greyscale 30%", className: "bg-greyscale-30" },
-      { name: "Greyscale 10%", className: "bg-greyscale-10" },
-    ],
+    swatches: ramp("ink", ink),
   },
   {
     title: "System",
     description: "Alerts are four colors used to indicate certain situations",
     columns: "md:grid-cols-4",
     swatches: [
-      { name: "Error", className: "bg-error" },
-      { name: "Warning", className: "bg-warning" },
-      { name: "Info", className: "bg-info" },
-      { name: "Success", className: "bg-success" },
+      { name: "Error", token: "error", hex: system.error },
+      { name: "Warning", token: "warning", hex: system.warning },
+      { name: "Info", token: "info", hex: system.info },
+      { name: "Success", token: "success", hex: system.success },
     ],
   },
   {
@@ -60,9 +37,9 @@ export const palette: PaletteGroup[] = [
     description: "Base color used for the background color of sections, cards",
     columns: "md:grid-cols-3",
     swatches: [
-      { name: "Background", className: "bg-background" },
-      { name: "Background Accent", className: "bg-background-accent" },
-      { name: "Border", className: "bg-border" },
+      { name: "Background", token: "background", hex: base.background },
+      { name: "Background Accent", token: "background-accent", hex: base.backgroundAccent },
+      { name: "Border", token: "border", hex: base.border },
     ],
   },
 ];

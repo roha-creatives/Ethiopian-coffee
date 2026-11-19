@@ -10,7 +10,7 @@ import { reveal } from "@/lib/reveal";
 // below reproduce that exactly.
 export default function ProjectKeyFeatures({ project }: { project: ProjectWithDetail }) {
   return (
-    <section className="section-y bg-greyscale-10">
+    <section className="section-y bg-ink-10">
       <div className="container-site flex flex-col gap-12 lg:flex-row lg:gap-24">
         <div className="flex flex-col justify-between gap-gutter lg:shrink lg:basis-[70%]">
           <h2 {...reveal(200)}>Key Features</h2>

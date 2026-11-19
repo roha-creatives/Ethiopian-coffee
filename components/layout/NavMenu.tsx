@@ -32,13 +32,13 @@ function DesktopNav({ pathname }: { pathname: string | null }) {
       <ul className="flex h-8 items-center">
         {mainNav.map((item) => {
           const active = pathname !== null && isActive(pathname, item);
-          const color = active ? "text-lemon-50" : "text-accent hover:text-lemon-50";
+          const color = active ? "text-brand-50" : "text-accent hover:text-brand-50";
           return (
             <li key={item.label} className="group relative mx-3 flex h-full items-center">
               <Link
                 href={item.href}
                 aria-current={active && pathname === item.href ? "page" : undefined}
-                className={`${itemText} ${color} flex items-center gap-1 focus-visible:text-lemon-50`}
+                className={`${itemText} ${color} flex items-center gap-1 focus-visible:text-brand-50`}
               >
                 {item.label}
                 {item.children && (
@@ -66,7 +66,7 @@ function Dropdown({ items, pathname }: { items: NonNullable<NavItem["children"]>
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={`block px-6 py-3 text-body transition-colors ${
-                  active ? "bg-secondary text-lemon-50" : "text-text hover:bg-secondary hover:text-lemon-50"
+                  active ? "bg-secondary text-brand-50" : "text-accent hover:bg-secondary hover:text-brand-50"
                 }`}
               >
                 {link.label}
@@ -98,7 +98,7 @@ function MobileNav({ pathname }: { pathname: string | null }) {
 
   const close = () => setOpen(false);
   const toggleButton =
-    "flex size-10 items-center justify-center rounded-lg bg-lemon-50 text-background-accent transition-colors hover:bg-primary hover:text-background";
+    "flex size-10 items-center justify-center rounded-lg bg-brand-50 text-background-accent transition-colors hover:bg-primary hover:text-background";
 
   return (
     <div className="lg:hidden">
@@ -145,7 +145,7 @@ function MobileNav({ pathname }: { pathname: string | null }) {
             {mainNav.map((item) => {
               const active = pathname !== null && isActive(pathname, item);
               const isOpen = expanded === item.label;
-              const color = active ? "text-lemon-50" : "text-accent";
+              const color = active ? "text-brand-50" : "text-accent";
               return (
                 <li key={item.label}>
                   {item.children ? (
@@ -154,7 +154,7 @@ function MobileNav({ pathname }: { pathname: string | null }) {
                         type="button"
                         onClick={() => setExpanded(isOpen ? null : item.label)}
                         aria-expanded={isOpen}
-                        className={`${itemText} ${color} flex w-full items-center justify-between px-3 py-3 transition-colors hover:bg-primary hover:text-lemon-50`}
+                        className={`${itemText} ${color} flex w-full items-center justify-between px-3 py-3 transition-colors hover:bg-primary hover:text-brand-50`}
                       >
                         {item.label}
                         <ChevronDown className={`size-4 transition-transform ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
@@ -169,7 +169,7 @@ function MobileNav({ pathname }: { pathname: string | null }) {
                                 onClick={close}
                                 aria-current={current ? "page" : undefined}
                                 className={`block p-3 text-body transition-colors ${
-                                  current ? "bg-secondary text-lemon-50" : "text-text hover:text-lemon-50"
+                                  current ? "bg-secondary text-brand-50" : "text-accent hover:text-brand-50"
                                 }`}
                               >
                                 {link.label}
@@ -184,7 +184,7 @@ function MobileNav({ pathname }: { pathname: string | null }) {
                       href={item.href}
                       onClick={close}
                       aria-current={active ? "page" : undefined}
-                      className={`${itemText} ${color} block px-3 py-3 transition-colors hover:bg-primary hover:text-lemon-50`}
+                      className={`${itemText} ${color} block px-3 py-3 transition-colors hover:bg-primary hover:text-brand-50`}
                     >
                       {item.label}
                     </Link>

@@ -9,9 +9,9 @@ import { revealAttrs, type RevealSpec } from "@/lib/reveal";
 // element of the button would paint over its own background) and haloes outward.
 const variants = {
   /** Hero / Video Gallery: 60px, ringed play icon, Primary 10% glow. */
-  ring: { button: "size-[60px] bg-lemon-50 text-primary hover:bg-primary hover:text-lemon-50", glow: "bg-lemon-10" },
+  ring: { button: "size-[60px] bg-brand-50 text-primary hover:bg-primary hover:text-brand-50", glow: "bg-brand-10" },
   /** Testimonial wall tiles: 80px, solid Secondary 70% play icon, Primary 70% glow. */
-  solid: { button: "size-20 bg-lemon-50 text-leaf-70 hover:bg-leaf-50 hover:text-lemon-50", glow: "bg-lemon-70" },
+  solid: { button: "size-20 bg-brand-50 text-support-70 hover:bg-support-50 hover:text-brand-50", glow: "bg-brand-70" },
 };
 
 type VideoPopupButtonProps = {
@@ -74,7 +74,7 @@ export default function VideoPopupButton({
           type="button"
           onClick={close}
           aria-label="Close video"
-          className="absolute top-2 right-2 z-10 flex size-10 items-center justify-center rounded-full bg-lemon-50 text-primary hover:bg-primary hover:text-lemon-50"
+          className="absolute top-2 right-2 z-10 flex size-10 items-center justify-center rounded-full bg-brand-50 text-primary hover:bg-primary hover:text-brand-50"
         >
           <X className="size-5" aria-hidden="true" />
         </button>

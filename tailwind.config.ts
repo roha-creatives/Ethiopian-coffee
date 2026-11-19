@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+import { base, brand, ink, roles, support, system } from "./lib/theme/colors";
 
-// Design tokens from the Verdea Elementor kit (_reference/templates/global.json).
+// Design tokens, originally from the Verdea Elementor kit (_reference/templates/global.json).
 // Responsive font sizes resolve through CSS variables defined in app/globals.css,
 // so a single `text-h1` class follows Elementor's desktop/tablet/mobile values.
 const config: Config = {
@@ -15,45 +16,17 @@ const config: Config = {
       "2xl": "1536px",
     },
     extend: {
+      // Values live in lib/theme/colors.ts (also rendered on /design-guidelines).
       colors: {
-        // System colors
-        primary: "#072A00", // Greyscale 90%
-        secondary: "#314E2A", // Greyscale 70%
-        text: "#697E62", // Greyscale 50%
-        accent: "#BDC6B6", // Greyscale 30%
-
-        greyscale: {
-          10: "#E7EAE0",
-          30: "#BDC6B6",
-          50: "#697E62",
-          70: "#314E2A",
-          90: "#072A00",
-        },
-        lemon: {
-          // "Primary" ramp in the kit
-          10: "#F9FFCD",
-          30: "#F9FFB8",
-          50: "#F9FFA3",
-          70: "#AEB06C",
-          90: "#636536",
-        },
-        leaf: {
-          // "Secondary" ramp in the kit
-          10: "#ECFCCA",
-          30: "#BBF451",
-          50: "#7CCF00",
-          70: "#5EA500",
-          90: "#497D00",
-        },
-        border: "#D9DED2",
-        background: "#F5F5F5",
-        "background-accent": "#122017",
-        /** Booking card on service detail (a one-off literal in the kit, not a global). */
-        panel: "#15200F",
-        error: "#9E0C0C",
-        warning: "#BB8E10",
-        info: "#1341B6",
-        success: "#299E47",
+        ...roles,
+        brand,
+        support,
+        ink,
+        background: base.background,
+        "background-accent": base.backgroundAccent,
+        panel: base.panel,
+        border: base.border,
+        ...system,
       },
       fontFamily: {
         heading: ["var(--font-raleway)", "Raleway", "ui-sans-serif", "system-ui", "sans-serif"],

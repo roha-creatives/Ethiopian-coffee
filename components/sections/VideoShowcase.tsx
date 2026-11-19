@@ -38,7 +38,7 @@ export default function VideoShowcase({ index }: { index: number }) {
             {videoShowcase.duration}
           </GlassChip>
           <p
-            className="text-center text-big-text indent-lead text-greyscale-10 md:w-[58%] md:text-left lg:w-[31%]"
+            className="text-center text-big-text indent-lead text-ink-10 md:w-[58%] md:text-left lg:w-[31%]"
             {...reveal(200)}
           >
             {videoShowcase.copy}

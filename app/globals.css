@@ -42,7 +42,7 @@
   }
 
   a {
-    @apply text-primary transition-colors hover:text-lemon-90;
+    @apply text-primary transition-colors hover:text-brand-90;
   }
 
   h1, h2, h3, h4, h5, h6 {

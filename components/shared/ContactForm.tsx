@@ -35,8 +35,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // form-contact.json (MetForm): transparent fields with a Primary 70% border, 16px
 // radius and padding, Greyscale 10% labels/text. Meant for a dark section background.
 const fieldClass =
-  "w-full rounded-field border border-lemon-70 bg-transparent p-4 font-body text-field text-greyscale-10 transition-colors placeholder:text-accent hover:text-accent focus:text-greyscale-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-lemon-50/40 aria-invalid:border-error";
-const labelClass = "mb-4 block font-body text-body text-greyscale-10";
+  "w-full rounded-field border border-brand-70 bg-transparent p-4 font-body text-field text-ink-10 transition-colors placeholder:text-accent hover:text-accent focus:text-ink-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-50/40 aria-invalid:border-error";
+const labelClass = "mb-4 block font-body text-body text-ink-10";
 
 export default function ContactForm({ onSubmit, className = "" }: ContactFormProps) {
   const id = useId();
@@ -96,7 +96,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         </div>
         <div>
           <label htmlFor={fid("email")} className={labelClass}>
-            Email <span className="text-lemon-90" aria-hidden="true">*</span>
+            Email <span className="text-brand-90" aria-hidden="true">*</span>
           </label>
           <input
             id={fid("email")}
@@ -163,9 +163,9 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
             name="acceptedTerms"
             checked={values.acceptedTerms}
             onChange={(e) => set("acceptedTerms", e.target.checked)}
-            className="peer size-full cursor-pointer appearance-none border border-lemon-70 checked:border-lemon-90 checked:bg-lemon-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lemon-50"
+            className="peer size-full cursor-pointer appearance-none border border-brand-70 checked:border-brand-90 checked:bg-brand-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-50"
           />
-          <Check className="pointer-events-none absolute size-3 text-greyscale-10 opacity-0 peer-checked:opacity-100" aria-hidden="true" />
+          <Check className="pointer-events-none absolute size-3 text-ink-10 opacity-0 peer-checked:opacity-100" aria-hidden="true" />
         </span>
         I have read and accepted terms and privacy
       </label>
@@ -181,7 +181,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         </button>
         <p
           role="status"
-          className={`text-small ${status.state === "error" ? "text-error" : "text-leaf-30"}`}
+          className={`text-small ${status.state === "error" ? "text-error" : "text-support-30"}`}
         >
           {status.message}
         </p>
