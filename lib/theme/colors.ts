@@ -46,9 +46,9 @@ export const base = {
   /** Page background. */
   background: "#F6F2EA", // cream
   /** Dark bands: footer, Why Choose Us, dropdowns, dark cards. */
-  backgroundAccent: "#12213B", // navy-panel
+  backgroundAccent: "#24385C", // navy-line: lighter navy for dark bands
   /** Dark form card (service detail booking, contact). */
-  panel: "#0B1424", // navy-deep
+  panel: "#152441", // navy: one step darker than the bands
   /** Hairlines, muted button fill: a cool step darker than ice so it reads on both the
    *  cream page and ink-10 sections without a warm/cool clash. */
   border: "#D5DCE4", // derived
