@@ -20,6 +20,10 @@ type FeatureShowcaseProps = {
    * when stacked, so it falls back to the fixed tablet/mobile heights there.
    */
   imageMode?: "fixed" | "stretch";
+  /** Where each row's arrow links; null drops the arrows. */
+  href?: string | null;
+  /** Closing note under the rows (About "Where We Ship"). */
+  note?: string;
 };
 
 // Background Accent band: label · 45% heading · CTA row, then photo beside feature rows
@@ -32,6 +36,8 @@ export default function FeatureShowcase({
   image,
   imageAlt,
   imageMode = "fixed",
+  href = "/coffees",
+  note,
 }: FeatureShowcaseProps) {
   return (
     <section className="section-y bg-background-accent">
@@ -58,7 +64,12 @@ export default function FeatureShowcase({
           />
 
           <div className="w-full lg:flex-1">
-            <FeatureList items={items} tone="dark" href="/services" />
+            <FeatureList items={items} tone="dark" href={href ?? undefined} />
+            {note && (
+              <p className="mt-8 border-t border-white/10 pt-8 text-body text-accent" {...reveal(200)}>
+                {note}
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -11,14 +11,17 @@ type CoverImageProps = {
   className?: string;
   /** "background" fills the nearest positioned ancestor behind its content (banners). */
   layout?: "frame" | "background";
-  /** "top" for full-bleed banners framed on the subject's head. */
-  position?: "center" | "top";
+  /** "top" for full-bleed banners framed on the subject's head; "upper" (30% down) for tall
+   *  portraits in wide frames, keeping a seated subject's face and hands in view. */
+  position?: keyof typeof positions;
   /** Above-the-fold banners. */
   preload?: boolean;
   /** Hover zoom used by the gallery slider (needs `group` on an ancestor). */
   zoomOnHover?: boolean;
   reveal?: RevealSpec;
 };
+
+const positions = { center: "", top: "object-top", upper: "object-[50%_30%]" };
 
 // The kit's image widget / photo background: a frame with an object-cover image filling it.
 export default function CoverImage({
@@ -41,7 +44,7 @@ export default function CoverImage({
         sizes={sizes}
         preload={preload}
         placeholder="blur"
-        className={`object-cover ${position === "top" ? "object-top" : ""} ${
+        className={`object-cover ${positions[position]} ${
           zoomOnHover ? "transition-transform duration-500 group-hover:scale-110" : ""
         }`}
       />

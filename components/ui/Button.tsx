@@ -21,6 +21,8 @@ const variants = {
   muted: "border-border bg-border text-primary hover:border-primary hover:bg-primary hover:text-brand-50",
   /** Hero secondary: transparent with Primary 50% outline, for dark backgrounds. */
   outline: "border-brand-50 bg-transparent text-brand-50 hover:border-background hover:bg-background hover:text-primary",
+  /** WhatsApp links: brand green (#25D366) with Primary text, darker green on hover. */
+  whatsapp: "border-[#25D366] bg-[#25D366] text-primary hover:border-[#1DA851] hover:bg-[#1DA851]",
 };
 
 export type ButtonVariant = keyof typeof variants;

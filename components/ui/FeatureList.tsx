@@ -19,12 +19,14 @@ const copyWidths = {
 type FeatureListProps = {
   items: Feature[];
   tone: keyof typeof tones;
-  href: string;
+  /** Arrow-ring target; omit for rows without the ring. */
+  href?: string;
   copyWidth?: keyof typeof copyWidths;
 };
 
 // Icon tile (64px icon, 16px padding, Greyscale 90%) · 46%/60% copy · framed arrow ring,
 // rows 32px apart with a white 10% rule between them (as in the kit, near-invisible on light).
+// Rows without an icon or href drop the tile/ring and let the copy take the full width.
 export default function FeatureList({ items, tone, href, copyWidth = "narrow" }: FeatureListProps) {
   const t = tones[tone];
   return (
@@ -35,14 +37,16 @@ export default function FeatureList({ items, tone, href, copyWidth = "narrow" }:
           {...reveal(alternate(i))}
           className="flex flex-col items-start justify-between gap-gutter border-white/10 md:flex-row [&:not(:first-child)]:border-t [&:not(:first-child)]:pt-8"
         >
-          <div className="shrink-0 rounded-2xl bg-primary p-4">
-            <item.icon className="size-16 text-brand-50" strokeWidth={1.25} aria-hidden="true" />
-          </div>
-          <div className={copyWidths[copyWidth]}>
+          {item.icon && (
+            <div className="shrink-0 rounded-2xl bg-primary p-4">
+              <item.icon className="size-16 text-brand-50" strokeWidth={1.25} aria-hidden="true" />
+            </div>
+          )}
+          <div className={item.icon || href ? copyWidths[copyWidth] : "w-full"}>
             <h3 className={`mb-2.5 text-h5 ${t.title}`}>{item.title}</h3>
             <p className={`text-big-text ${t.description}`}>{item.description}</p>
           </div>
-          <ArrowCircleLink href={href} label={`Learn more: ${item.title}`} variant="feature" className="-mb-2" />
+          {href && <ArrowCircleLink href={href} label={`Learn more: ${item.title}`} variant="feature" className="-mb-2" />}
         </li>
       ))}
     </ul>

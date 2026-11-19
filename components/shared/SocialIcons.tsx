@@ -38,6 +38,9 @@ const icons: Record<SocialNetwork, (props: SVGProps<SVGSVGElement>) => React.JSX
 };
 
 // Footer social-icons widget: circle shape, 24px icon, 1em padding, 8px spacing.
+/** The brand marks on their own, e.g. for the WhatsApp button on Contact. */
+export { icons as socialIcons };
+
 export default function SocialIcons() {
   return (
     <ul className="flex flex-wrap gap-2">
