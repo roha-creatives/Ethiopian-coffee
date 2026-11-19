@@ -11,16 +11,19 @@ import { reveal } from "@/lib/reveal";
 
 const hub = project(ADDIS_ABABA.lon, ADDIS_ABABA.lat);
 
+/** Section background, so the block can alternate with its neighbours on any page. */
+const surfaces = { tinted: "bg-ink-10", page: "bg-background" };
+
 // Interactive locator map. The country view marks Addis Ababa and the southern highland belt;
 // all four origins sit within ~1.5° of each other there, so a zoomed inset beside it (below
 // it on phones, at full width for easy tapping) carries the numbered, pulsing pins. Pins and the list beside the map stay in sync — hover, focus or
 // click either to select an origin, whose details show in the card below the list.
-export default function OriginsMap({ index }: { index: number }) {
+export default function OriginsMap({ index, surface = "tinted" }: { index: number; surface?: keyof typeof surfaces }) {
   const [active, setActive] = useState(0);
   const selected = originPins[active];
 
   return (
-    <section className="section-y bg-ink-10">
+    <section className={`section-y ${surfaces[surface]}`}>
       <div className="container-site flex flex-col gap-12 lg:gap-16">
         <div className="flex flex-col items-start justify-between gap-gutter md:flex-row">
           <SectionLabel index={index} label={originsMap.label} className="shrink-0" reveal />

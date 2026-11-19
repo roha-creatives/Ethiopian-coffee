@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AboutIntro from "@/components/sections/AboutIntro";
 import HomeHero from "@/components/sections/home/HomeHero";
 import FaqSection from "@/components/sections/FaqSection";
+import OriginsMap from "@/components/sections/OriginsMap";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import TestimonialSpotlight from "@/components/sections/TestimonialSpotlight";
@@ -12,18 +13,19 @@ export const metadata: Metadata = {
   title: { absolute: "Ethiopian Coffee by Hanan Tarq | Specialty Coffee Exporter, Ethiopia" },
 };
 
-// home.json: sections numbered (2)–(8) after the hero, as in the kit.
+// Sections numbered (2)–(9) after the hero; the origins map sits above Our Coffees.
 export default function HomePage() {
   return (
     <>
       <HomeHero />
       <AboutIntro />
-      <ServicesSection index={3} />
-      <VideoShowcase index={4} />
-      <ProjectsSection index={5} />
-      <WhyChooseUs index={6} />
-      <TestimonialSpotlight index={7} />
-      <FaqSection index={8} />
+      <OriginsMap index={3} surface="page" />
+      <ServicesSection index={4} />
+      <VideoShowcase index={5} />
+      <ProjectsSection index={6} />
+      <WhyChooseUs index={7} />
+      <TestimonialSpotlight index={8} />
+      <FaqSection index={9} />
     </>
   );
 }
