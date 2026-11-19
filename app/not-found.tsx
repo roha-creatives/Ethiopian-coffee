@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 // 404-error.json. Defining this also keeps Next's built-in 404 out of the app: its inline
 // <style> sets body { background: #000 } in dark mode and outlives client-side navigation.
 export default function NotFound() {
-  return <PageHero title={pages.notFound.title} image={pages.notFound.image} variant="error" />;
+  return <PageHero title={pages.notFound.title} intro={pages.notFound.intro} image={pages.notFound.image} variant="error" />;
 }

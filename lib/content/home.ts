@@ -6,8 +6,8 @@ import type { Cta } from "./site";
 // Home hero (ethiopiancoffee.net). Badge and intro copy are shared: see site.ts.
 export const homeHero = {
   title: "Ethiopian Coffee by Hanan Tarq",
-  image: images.dryingBeds,
-  primaryCta: { label: "Explore the Catalogue", href: "/services" } satisfies Cta,
+  image: images.coffeeCeremony,
+  primaryCta: { label: "Explore the Catalogue", href: "/coffees" } satisfies Cta,
   secondaryCta: { label: "Become an Importer", href: "/contact" } satisfies Cta,
   slideshow: [images.cherryBasket, images.picking, images.parchment, images.roastedTins],
   videoCaption: "From highland farms to your port — hand-selected, cupped, and documented at every step.",
@@ -15,7 +15,8 @@ export const homeHero = {
 };
 
 // Icon rows ("Why Ethiopian Coffee", core values, key features).
-export type Feature = { title: string; description: string; icon: LucideIcon };
+/** `icon` is optional: rows without one drop the icon tile (About "Where We Ship"). */
+export type Feature = { title: string; description: string; icon?: LucideIcon };
 
 export const features: Feature[] = [
   {

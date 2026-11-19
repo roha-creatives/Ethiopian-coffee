@@ -7,7 +7,7 @@ export const brandName = "Ethiopian Coffee";
 export const hero = {
   badge: "Where Coffee Began · Addis Ababa",
   intro:
-    "Grade 1 specialty Arabica from Sidama, Bombe, Yirgacheffe & Guji — green and roasted, exported from the birthplace of coffee to the world.",
+    "Specialty only, from the birthplace of coffee. Grade 1 is our standard — Grade 2 available on request. Green for import and roasting, or roasted at origin under the Ethiopian Coffee label.",
 };
 
 export const footer = {

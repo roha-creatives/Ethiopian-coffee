@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <PageHero title={pages.gallery.title} image={pages.gallery.image} />
+      <PageHero title={pages.gallery.title} intro={pages.gallery.intro} image={pages.gallery.image} />
       <GalleryIntro />
       <VideoShowcase index={4} />
       <ImageMarquee images={galleryImages} className="py-[72px] lg:py-gutter" />

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function FaqsPage() {
   return (
     <>
-      <PageHero title={pages.faqs.title} image={pages.faqs.image} />
+      <PageHero title={pages.faqs.title} intro={pages.faqs.intro} image={pages.faqs.image} />
       <FaqSection index={8} />
     </>
   );

@@ -17,7 +17,7 @@ import { reveal } from "@/lib/reveal";
 export default function HomeHero() {
   return (
     <section className="relative isolate flex min-h-svh overflow-hidden pt-[180px] pb-12 lg:pt-[124px]">
-      <CoverImage src={homeHero.image} sizes="100vw" layout="background" position="top" preload />
+      <CoverImage src={homeHero.image} sizes="100vw" layout="background" position="upper" preload />
       <HeroOverlay />
 
       <div className="container-site flex flex-col justify-end gap-16 max-md:justify-center lg:flex-row lg:justify-between lg:gap-gutter">

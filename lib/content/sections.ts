@@ -14,13 +14,6 @@ export const aboutIntro = {
   imageAlt: "Basket of freshly picked red coffee cherries in the Ethiopian highlands",
 };
 
-export const servicesIntro = {
-  label: "Our Coffees",
-  heading: "Green or Roasted, Specialty Only",
-  copy: "Grade 1 is our standard — Grade 2 available on request. Every lot is cupped, certified, and shipped with full documentation.",
-  cta: { label: "Request a Sample", href: "/contact" } satisfies Cta,
-};
-
 export const videoShowcase = {
   label: "How We Work",
   heading: "Farm to Your Port",
@@ -33,7 +26,7 @@ export const projectsIntro = {
   label: "Our Origins",
   heading: "Grade 1 Lots from Ethiopia’s Finest Highlands",
   copy: "Specialty only. Every lot is cupped, certified, and shipped with full farm-to-port documentation.",
-  cta: { label: "Full Catalogue", href: "/projects" } satisfies Cta,
+  cta: { label: "Full Catalogue", href: "/origins" } satisfies Cta,
   image: images.picking,
   imageAlt: "Hands picking ripe coffee cherries",
 };
@@ -41,8 +34,8 @@ export const projectsIntro = {
 export const whyChooseUs = {
   label: "Why Source From Us",
   heading: "Why Ethiopian Coffee",
-  image: images.weighing,
-  imageAlt: "Weighing green coffee sacks at origin",
+  image: images.exportWarehouse,
+  imageAlt: "Green coffee sacks stacked in our export warehouse",
 };
 
 /** CTA on every dark feature band (Why Choose Us, Key Features). */
@@ -53,8 +46,9 @@ export const testimonialsIntro = {
   heading: "Authentic, Hand-Selected, World-Class",
   copy: "Ethiopian Coffee is the vision of Hanan Tariq — taking Ethiopian excellence seriously and presenting it to the world without compromise.",
   cta: { label: "Her Full Story", href: "/about" } satisfies Cta,
-  /** Spotlight card photo (wide crop from the top; the founder portrait crops badly here). */
-  image: images.picking,
+  /** Spotlight card photo: the coffee ceremony, framed 30% down (CoverImage "upper") so her face,
+   *  cup and hands stay in the wide card. */
+  image: images.coffeeCeremony,
 };
 
 export const faqIntro = {
@@ -81,5 +75,5 @@ export const originsMap = {
   label: "Where We Source",
   heading: "Four Origins, One Highland Belt",
   copy: "Every origin ships as Grade 1 first, with Grade 2 on request — washed or natural, green or roasted at origin.",
-  hint: "Select a pin or an origin to explore it.",
+  scrollHint: "Scroll to explore",
 };

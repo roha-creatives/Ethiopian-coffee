@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function DesignGuidelinesPage() {
   return (
     <>
-      <PageHero title={pages.designGuidelines.title} image={pages.designGuidelines.image} />
+      <PageHero title={pages.designGuidelines.title} intro={pages.designGuidelines.intro} image={pages.designGuidelines.image} />
       <ColorPalette />
       <TypeSpecimens />
       <ButtonShowcase />
