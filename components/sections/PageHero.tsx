@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Button from "@/components/ui/Button";
 import CoverImage from "@/components/ui/CoverImage";
 import HeroBadge from "@/components/ui/HeroBadge";
+import HeroOverlay from "@/components/ui/HeroOverlay";
 import { hero } from "@/lib/content/site";
 import { reveal } from "@/lib/reveal";
 
@@ -20,14 +21,14 @@ type PageHeroProps = {
   variant?: keyof typeof variants;
 };
 
-// Inner-page banner: photo with a Background Accent overlay, badge + page title (H1) +
+// Inner-page banner: photo with a Background Accent tint and readability gradients, badge + page title (H1) +
 // intro bottom-left, breadcrumb bottom-right.
 export default function PageHero({ title, image, variant = "page" }: PageHeroProps) {
   const v = variants[variant];
   return (
-    <section className={`relative isolate flex pt-[124px] pb-12 ${v.height}`}>
+    <section className={`relative isolate flex pt-[180px] pb-12 lg:pt-[124px] ${v.height}`}>
       <CoverImage src={image} sizes="100vw" layout="background" position="top" preload />
-      <div className={`absolute inset-0 -z-10 ${v.overlay}`} aria-hidden="true" />
+      <HeroOverlay tint={v.overlay} />
 
       <div className="container-site flex flex-col justify-end gap-16 max-md:justify-center lg:flex-row lg:justify-between lg:gap-gutter">
         <div className="flex w-full flex-col items-start justify-end gap-gutter overflow-hidden lg:w-[660px]">

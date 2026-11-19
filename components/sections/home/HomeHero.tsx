@@ -2,6 +2,7 @@ import Button from "@/components/ui/Button";
 import CoverImage from "@/components/ui/CoverImage";
 import GlassChip from "@/components/ui/GlassChip";
 import HeroBadge from "@/components/ui/HeroBadge";
+import HeroOverlay from "@/components/ui/HeroOverlay";
 import KenBurnsSlideshow from "@/components/ui/KenBurnsSlideshow";
 import VideoPopupButton from "@/components/ui/VideoPopupButton";
 import { homeHero } from "@/lib/content/home";
@@ -9,14 +10,15 @@ import { hero } from "@/lib/content/site";
 import { KIT_VIDEO_ID } from "@/lib/images";
 import { reveal } from "@/lib/reveal";
 
-// home.json section 1: full-height photo hero with a Background Accent 40% overlay.
+// home.json section 1: full-height photo hero with a Background Accent 40% tint and
+// readability gradients.
 // Desktop: copy bottom-left (660px), video card + tags in a 27% right column.
 // Tablet: the right column becomes a row-reverse strip under the copy; phones stack it.
 export default function HomeHero() {
   return (
-    <section className="relative isolate flex min-h-svh overflow-hidden pt-[124px] pb-12">
+    <section className="relative isolate flex min-h-svh overflow-hidden pt-[180px] pb-12 lg:pt-[124px]">
       <CoverImage src={homeHero.image} sizes="100vw" layout="background" position="top" preload />
-      <div className="absolute inset-0 -z-10 bg-background-accent/40" aria-hidden="true" />
+      <HeroOverlay />
 
       <div className="container-site flex flex-col justify-end gap-16 max-md:justify-center lg:flex-row lg:justify-between lg:gap-gutter">
         <div className="flex w-full flex-col items-start justify-end gap-gutter overflow-hidden lg:w-[660px]">

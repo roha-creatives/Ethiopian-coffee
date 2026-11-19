@@ -6,7 +6,8 @@ import { headerCta } from "@/lib/content/site";
 
 // header.json: transparent row over the page hero. Left column 65% (logo + menu,
 // 32px gap), right column 35% (CTA). On tablet both columns go full width and wrap,
-// so the CTA drops to its own right-aligned row under the logo/hamburger.
+// so the CTA drops to its own right-aligned row under the logo/hamburger; heroes add top
+// padding below desktop (pt-[180px]) to clear that taller header.
 export default function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
