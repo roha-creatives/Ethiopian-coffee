@@ -12,22 +12,22 @@ export type Ramp = Record<Step, string>;
 // Palette adapted from ethiopiancoffee.net (its --color-* custom properties). Values marked
 // "derived" are in-between shades that complete a five-step ramp; the rest are verbatim.
 
-/** Gold. */
+/** Light navy: primary buttons, highlights and icons (dark ink-90 text on brand-50). */
 export const brand: Ramp = {
+  10: "#E9F0F3", // ice
+  30: "#D4DEEA", // derived
+  50: "#B5C4D8", // derived: light navy
+  70: "#6F88AD", // derived
+  90: "#2F4A75", // derived: between navy-line and mist
+};
+
+/** Gold, now the secondary accent: list icons, breadcrumb dot, badges. */
+export const support: Ramp = {
   10: "#F3E8D2", // derived: pale gold
   30: "#E2C795", // gold-light
   50: "#C29A52", // gold
-  70: "#A8843F", // derived: between gold and gold-deep
+  70: "#A8843F", // derived
   90: "#8E6E2F", // gold-deep
-};
-
-/** Navy-blue accents, from navy-line to ice. */
-export const support: Ramp = {
-  10: "#DCE5F0", // derived: pale blue
-  30: "#B5C4D8", // derived
-  50: "#6F88AD", // derived
-  70: "#3E5A86", // derived
-  90: "#24385C", // navy-line
 };
 
 /** Neutrals: navy text down to the lightest surface. */
@@ -76,7 +76,7 @@ export const roles = {
 
 /** Labels shown on the design guidelines page. */
 export const rampLabels = {
-  brand: { title: "Primary color · Gold", swatch: "Primary" },
-  support: { title: "Secondary color · Navy", swatch: "Secondary" },
+  brand: { title: "Primary color · Light Navy", swatch: "Primary" },
+  support: { title: "Secondary color · Gold", swatch: "Secondary" },
   ink: { title: "Greyscale · Ink & Ice", swatch: "Greyscale" },
 };
