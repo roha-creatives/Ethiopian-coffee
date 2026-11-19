@@ -27,20 +27,58 @@ export function project(lon: number, lat: number): { x: number; y: number } {
   return { x: (lon - BOUNDS.west) * SCALE, y: (BOUNDS.north - lat) * SCALE };
 }
 
-export const ETHIOPIA_PATH =
-  ETHIOPIA_OUTLINE.map(([lon, lat], i) => {
-    const { x, y } = project(lon, lat);
-    return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
-  }).join(" ") + " Z";
+function toPath(outline: [number, number][]) {
+  return (
+    outline
+      .map(([lon, lat], i) => {
+        const { x, y } = project(lon, lat);
+        return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+      })
+      .join(" ") + " Z"
+  );
+}
+
+export const ETHIOPIA_PATH = toPath(ETHIOPIA_OUTLINE);
 
 /** Roasting and export hub. */
 export const ADDIS_ABABA = { name: "Addis Ababa", note: "Roasting & export hub", lat: 9.03, lon: 38.74 };
 
-/** The southern highland belt holding all four origins, shown zoomed in as an inset. */
-export const HIGHLANDS = { west: 37.75, east: 39.55, north: 7.45, south: 5.2, label: "Southern highlands" };
+/** Sourcing zones holding the four origins: simplified (≈0.1°) outlines for a stylised map. */
+export const ZONES = [
+  {
+    slug: "sidama",
+    name: "Sidama",
+    label: project(38.78, 6.86),
+    path: toPath([
+      [38.35, 7.25], [38.75, 7.2], [38.95, 6.95], [39.2, 6.7], [39.15, 6.45], [38.95, 6.3],
+      [38.7, 6.35], [38.5, 6.55], [38.4, 6.8], [38.3, 7.0],
+    ]),
+  },
+  {
+    slug: "gedeo",
+    name: "Gedeo",
+    label: project(38.27, 6.32),
+    path: toPath([
+      [38.12, 6.48], [38.45, 6.5], [38.6, 6.35], [38.45, 6.1], [38.3, 5.9], [38.12, 6.0], [38.05, 6.2],
+    ]),
+  },
+  {
+    slug: "guji",
+    name: "Guji",
+    label: project(39.25, 5.45),
+    path: toPath([
+      [38.45, 6.05], [38.65, 6.3], [38.95, 6.25], [39.2, 6.4], [39.6, 6.1], [39.9, 5.4], [39.6, 4.9],
+      [39.0, 4.7], [38.5, 5.0], [38.3, 5.55], [38.35, 5.85],
+    ]),
+  },
+] as const;
 
-const nw = project(HIGHLANDS.west, HIGHLANDS.north);
-const se = project(HIGHLANDS.east, HIGHLANDS.south);
+export type ZoneSlug = (typeof ZONES)[number]["slug"];
 
-/** The inset's box in main-map coordinates (also used as the inset SVG's viewBox). */
-export const HIGHLANDS_BOX = { x: nw.x, y: nw.y, width: se.x - nw.x, height: se.y - nw.y };
+/** Camera stops for the scroll zoom, as centre + size in map units: the whole country, the
+ *  southern highlands with Addis Ababa, then the sourcing zones around the four origins. */
+export const CAMERA = [
+  { cx: MAP_VIEWBOX.width / 2, cy: MAP_VIEWBOX.height / 2, width: MAP_VIEWBOX.width, height: MAP_VIEWBOX.height },
+  { cx: 345, cy: 415, width: 360, height: 290 },
+  { cx: 324, cy: 462, width: 205, height: 170 },
+];

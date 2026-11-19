@@ -1,9 +1,12 @@
 import type { StaticImageData } from "next/image";
 import { Coffee, Droplets, Mountain, Sparkles } from "lucide-react";
+import type { ZoneSlug } from "@/lib/content/ethiopia-map";
 import { images } from "@/lib/images";
 import type { Feature } from "./home";
 
 export type ProjectDetail = {
+  /** Hero subtitle: flavour notes, grade, process and altitude. */
+  tagline: string;
   intro: string;
   introImage: StaticImageData;
   features: Feature[];
@@ -32,8 +35,9 @@ type Origin = {
   intro: string;
   image: StaticImageData;
   introImage: StaticImageData;
-  /** Approximate growing-area centre, for the origins map. */
+  /** Approximate growing-area centre and sourcing zone, for the origins map. */
   coords: { lat: number; lon: number };
+  zone: ZoneSlug;
 };
 
 // The four origins (ethiopiancoffee.net/products).
@@ -52,6 +56,7 @@ const origins: Origin[] = [
     image: images.cherryBasket,
     introImage: images.dryingBeds,
     coords: { lat: 6.5, lon: 38.85 }, // Bensa, Sidama
+    zone: "sidama",
   },
   {
     slug: "yirgacheffe",
@@ -67,6 +72,7 @@ const origins: Origin[] = [
     image: images.picking,
     introImage: images.handSorting,
     coords: { lat: 6.16, lon: 38.21 }, // Yirgacheffe, Gedeo
+    zone: "gedeo",
   },
   {
     slug: "guji",
@@ -82,6 +88,7 @@ const origins: Origin[] = [
     image: images.cherryBranch,
     introImage: images.dryingStation,
     coords: { lat: 5.65, lon: 38.95 }, // Guji Zone, Oromia
+    zone: "guji",
   },
   {
     slug: "sidama-classic",
@@ -97,6 +104,7 @@ const origins: Origin[] = [
     image: images.dryingBeds,
     introImage: images.parchment,
     coords: { lat: 6.95, lon: 38.4 }, // Sidama Region (Hawassa highlands)
+    zone: "sidama",
   },
 ];
 
@@ -107,6 +115,7 @@ export const projects: Project[] = origins.map((o) => ({
   meta: [`Grade : ${o.grade}`, `Process : ${o.process}`, `Altitude : ${o.altitude}`],
   image: o.image,
   detail: {
+    tagline: `${o.notes}. ${o.grade}, ${o.process.toLowerCase()}, grown at ${o.altitude}.`,
     intro: o.intro,
     introImage: o.introImage,
     features: [
@@ -118,11 +127,25 @@ export const projects: Project[] = origins.map((o) => ({
   },
 }));
 
-export type OriginPin = Pick<Origin, "slug" | "title" | "region" | "grade" | "process" | "altitude" | "notes" | "coords">;
+export type OriginPin = Pick<
+  Origin,
+  "slug" | "title" | "region" | "grade" | "process" | "altitude" | "notes" | "coords" | "zone" | "image"
+>;
 
 /** The four origins as map pins (see components/sections/OriginsMap.tsx). */
 export const originPins: OriginPin[] = origins.map(
-  ({ slug, title, region, grade, process, altitude, notes, coords }) => ({ slug, title, region, grade, process, altitude, notes, coords }),
+  ({ slug, title, region, grade, process, altitude, notes, coords, zone, image }) => ({
+    slug,
+    title,
+    region,
+    grade,
+    process,
+    altitude,
+    notes,
+    coords,
+    zone,
+    image,
+  }),
 );
 
 export type ProjectWithDetail = Project & { detail: ProjectDetail };
@@ -132,5 +155,5 @@ export function getProjectWithDetail(slug: string): ProjectWithDetail | undefine
 }
 
 export function projectHref(project: Project): string {
-  return project.detail ? `/projects/${project.slug}` : "/contact";
+  return project.detail ? `/origins/${project.slug}` : "/contact";
 }
