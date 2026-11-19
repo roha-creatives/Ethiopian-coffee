@@ -32,6 +32,8 @@ type Origin = {
   intro: string;
   image: StaticImageData;
   introImage: StaticImageData;
+  /** Approximate growing-area centre, for the origins map. */
+  coords: { lat: number; lon: number };
 };
 
 // The four origins (ethiopiancoffee.net/products).
@@ -49,6 +51,7 @@ const origins: Origin[] = [
       "From the famed Bombe highlands of Bensa — among the highest coffee gardens on earth. Late-ripening cherry, slow-dried in thin layers, yielding micro-lots of remarkable clarity and sweetness. The headline of our export book.",
     image: images.cherryBasket,
     introImage: images.dryingBeds,
+    coords: { lat: 6.5, lon: 38.85 }, // Bensa, Sidama
   },
   {
     slug: "yirgacheffe",
@@ -63,6 +66,7 @@ const origins: Origin[] = [
       "The coffee that made Ethiopia famous among roasters. Grown in the lush Gedeo highlands and washed to crystalline cleanliness — delicate florals, bright citrus, and a silky, tea-like finish.",
     image: images.picking,
     introImage: images.handSorting,
+    coords: { lat: 6.16, lon: 38.21 }, // Yirgacheffe, Gedeo
   },
   {
     slug: "guji",
@@ -77,6 +81,7 @@ const origins: Origin[] = [
       "High-altitude lots from virgin soils south of Sidama. Naturals burst with berry and ripe stone fruit; washed lots are structured and floral. Guji has become the darling of modern specialty roasters.",
     image: images.cherryBranch,
     introImage: images.dryingStation,
+    coords: { lat: 5.65, lon: 38.95 }, // Guji Zone, Oromia
   },
   {
     slug: "sidama-classic",
@@ -91,6 +96,7 @@ const origins: Origin[] = [
       "Full and layered, from the volcanic soils and ideal microclimate of the Sidama highlands. A dependable, complex cup that anchors blends and shines alone — our highest-volume origin.",
     image: images.dryingBeds,
     introImage: images.parchment,
+    coords: { lat: 6.95, lon: 38.4 }, // Sidama Region (Hawassa highlands)
   },
 ];
 
@@ -111,6 +117,13 @@ export const projects: Project[] = origins.map((o) => ({
     ],
   },
 }));
+
+export type OriginPin = Pick<Origin, "slug" | "title" | "region" | "grade" | "process" | "altitude" | "notes" | "coords">;
+
+/** The four origins as map pins (see components/sections/OriginsMap.tsx). */
+export const originPins: OriginPin[] = origins.map(
+  ({ slug, title, region, grade, process, altitude, notes, coords }) => ({ slug, title, region, grade, process, altitude, notes, coords }),
+);
 
 export type ProjectWithDetail = Project & { detail: ProjectDetail };
 

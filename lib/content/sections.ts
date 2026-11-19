@@ -75,3 +75,11 @@ export const vision = {
   label: "Our Promise",
   copy: "Named farms, traceable lots, and a founder’s mark on every bag — authentic, hand-selected, and world-class.",
 };
+
+/** Interactive origins map (components/sections/OriginsMap.tsx). */
+export const originsMap = {
+  label: "Where We Source",
+  heading: "Four Origins, One Highland Belt",
+  copy: "Every origin ships as Grade 1 first, with Grade 2 on request — washed or natural, green or roasted at origin.",
+  hint: "Select a pin or an origin to explore it.",
+};

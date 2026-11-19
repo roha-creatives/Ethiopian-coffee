@@ -65,6 +65,11 @@ const config: Config = {
           "100%": { transform: "scale(1.6)", opacity: "0" },
         },
         marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
+        "pin-pulse": {
+          "0%": { transform: "scale(1)", opacity: "0.8" },
+          "100%": { transform: "scale(3.2)", opacity: "0" },
+        },
       },
       animation: {
         // Duration is overridden per slide to match the slideshow interval.
@@ -72,6 +77,9 @@ const config: Config = {
         glow: "glow 1.8s ease-out infinite",
         // Duration is set per instance from the slide count.
         marquee: "marquee 70s linear infinite",
+        "fade-in": "fade-in 0.4s ease",
+        // Origins map pins; delay is staggered per pin.
+        "pin-pulse": "pin-pulse 2.2s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
     },
   },
