@@ -5,7 +5,7 @@ import PageHero from "@/components/sections/PageHero";
 import { pages } from "@/lib/content/pages";
 
 export const metadata: Metadata = {
-  title: pages.contact.title,
+  title: "Contact Us",
   description: pages.contact.description,
 };
 
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero title={pages.contact.title} image={pages.contact.image} />
+      <PageHero title={pages.contact.title} intro={pages.contact.intro} image={pages.contact.image} imagePosition="upper" splitImage />
       <ContactSection />
-      <FaqSection index={8} />
+      <FaqSection index={2} />
     </>
   );
 }
