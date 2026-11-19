@@ -21,13 +21,13 @@ export const brand: Ramp = {
   90: "#2F4A75", // derived: between navy-line and mist
 };
 
-/** Gold, now the secondary accent: list icons, breadcrumb dot, badges. */
+/** Deeper navy: secondary accent (list icons, breadcrumb dot, badges). */
 export const support: Ramp = {
-  10: "#F3E8D2", // derived: pale gold
-  30: "#E2C795", // gold-light
-  50: "#C29A52", // gold
-  70: "#A8843F", // derived
-  90: "#8E6E2F", // gold-deep
+  10: "#DCE5F0", // derived
+  30: "#B5C4D8", // derived
+  50: "#6F88AD", // derived
+  70: "#3E5A86", // derived
+  90: "#24385C", // navy-line
 };
 
 /** Neutrals: navy text down to the lightest surface. */
@@ -77,6 +77,6 @@ export const roles = {
 /** Labels shown on the design guidelines page. */
 export const rampLabels = {
   brand: { title: "Primary color · Light Navy", swatch: "Primary" },
-  support: { title: "Secondary color · Gold", swatch: "Secondary" },
+  support: { title: "Secondary color · Navy", swatch: "Secondary" },
   ink: { title: "Greyscale · Ink & Ice", swatch: "Greyscale" },
 };
