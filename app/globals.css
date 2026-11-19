@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* Responsive type scale (Elementor: mobile ≤767, tablet ≤1024, desktop ≥1025). */
+:root {
+  --fs-h1: 44px;
+  --fs-h2: 36px;
+  --fs-h3: 30px;
+  --fs-h4: 24px;
+  --fs-h5: 22px;
+  --fs-big: 19px;
+  --lh-big: 1.4;
+  --lh-body: 1.4;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-h1: 72px;
+    --fs-h2: 48px;
+    --fs-h3: 32px;
+    --fs-h4: 28px;
+    --fs-big: 20px;
+    --lh-big: 1.5;
+    --lh-body: 1.5;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --fs-h1: 80px;
+    --fs-h2: 57px;
+    --fs-h3: 48px;
+    --fs-h4: 32px;
+    --fs-h5: 24px;
+  }
+}
+
+/* Elementor Theme Styles: body, links, headings. */
+@layer base {
+  body {
+    @apply bg-background font-body text-body text-text antialiased;
+  }
+
+  a {
+    @apply text-primary transition-colors hover:text-lemon-90;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-secondary;
+  }
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+  h4 { @apply text-h4; }
+  h5 { @apply text-h5; }
+  h6 { @apply text-h6; }
+}
+
+/* Section vertical rhythm: 112px desktop, 72px tablet/mobile. */
+@utility section-y {
+  @apply py-[72px] lg:py-28;
+}
+
+/* The kit's paragraphs start with a run of &nbsp; — a first-line indent. */
+@utility indent-lead {
+  text-indent: 1.4em;
+}
+
+/* Boxed content width 1440px, 24px side padding outside it. */
+@utility container-site {
+  @apply mx-auto w-full max-w-[calc(1440px+48px)] px-gutter;
+}
+
+/* Entrance animations: elements start hidden once the inline script in app/layout.tsx has
+   set data-reveal-ready (skipped without JS and for reduced-motion users), and
+   RevealObserver plays them with the Web Animations API. Keyframes live in lib/reveal.ts. */
+html[data-reveal-ready] [data-reveal] {
+  visibility: hidden;
+}
