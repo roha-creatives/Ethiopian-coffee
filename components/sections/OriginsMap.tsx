@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useId, useRef, useState, type RefObject } from "react";
+import { useCallback, useEffect, useId, useRef, useState, useSyncExternalStore, type RefObject } from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { ADDIS_ABABA, CAMERA, ETHIOPIA_PATH, MAP_VIEWBOX, ZONES, project } from "@/lib/content/ethiopia-map";
@@ -62,6 +62,17 @@ function useStickyProgress(rootRef: RefObject<HTMLElement | null>) {
   return progress;
 }
 
+const phoneQuery = "(max-width: 767px)";
+const subscribePhone = (onChange: () => void) => {
+  const mq = window.matchMedia(phoneQuery);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+};
+/** Phones (below md), where the map is too narrow for pop-ups to open to the left of a pin. */
+function useIsPhone() {
+  return useSyncExternalStore(subscribePhone, () => window.matchMedia(phoneQuery).matches, () => false);
+}
+
 /** Pixel size of the map stage, for placing the HTML pins and labels over the SVG. */
 function useSize(ref: RefObject<HTMLElement | null>) {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -111,6 +122,7 @@ export default function OriginsMap({ index, surface = "tinted" }: { index: numbe
   const stageRef = useRef<HTMLDivElement>(null);
   const progress = useStickyProgress(rootRef);
   const size = useSize(stageRef);
+  const isPhone = useIsPhone();
   const dotsId = useId();
   const selectZone = useCallback((slug: string) => {
     setActive((current) =>
@@ -131,6 +143,9 @@ export default function OriginsMap({ index, surface = "tinted" }: { index: numbe
   const hubPx = toPx(hub.x, hub.y);
   const anchor = toPx(pinPoints[active].x, pinPoints[active].y);
   const popupRight = pinPoints[active].x >= clusterX;
+  /** Phones always open to the right (left-opening pop-ups ran off the narrow stage), nudged
+   *  back inside it when the pin sits near the right edge (the pop-up is w-32 = 128px). */
+  const popupLeft = isPhone ? Math.min(anchor.x + 24, size.width - 128 - 12) : anchor.x;
   const popupUp = anchor.y > size.height * 0.45;
 
   return (
@@ -285,9 +300,9 @@ export default function OriginsMap({ index, surface = "tinted" }: { index: numbe
                           aria-hidden="true"
                           className="pointer-events-none absolute w-32 overflow-hidden rounded-xl bg-background shadow-2xl motion-safe:animate-fade-in md:w-48"
                           style={{
-                            left: anchor.x,
+                            left: popupLeft,
                             top: anchor.y,
-                            transform: `translate(${popupRight ? "24px" : "calc(-100% - 24px)"}, ${popupUp ? "calc(-100% + 16px)" : "-16px"})`,
+                            transform: `translate(${isPhone ? "0px" : popupRight ? "24px" : "calc(-100% - 24px)"}, ${popupUp ? "calc(-100% + 16px)" : "-16px"})`,
                           }}
                         >
                           <Image src={selected.image} alt="" sizes="192px" className="h-16 w-full object-cover md:h-28" />

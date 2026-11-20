@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Ethiopian Coffee",
   },
   description:
-    "Grade 1 specialty Arabica from Sidama, Bombe, Yirgacheffe & Guji — green and roasted, exported from the birthplace of coffee to the world.",
+    "Grade 1 specialty Arabica from Sidama, Bombe, Yirgacheffe & Guji, green and roasted, exported from the birthplace of coffee to the world.",
 };
 
 // Runs before first paint so entrance-animated elements start hidden (no flash), unless the

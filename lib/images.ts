@@ -56,3 +56,6 @@ export const images = {
 
 /** YouTube video behind every play button (still the template's clip; replace with a brand video). */
 export const KIT_VIDEO_ID = "VhBl3dHT5SY";
+
+/** Home hero video (card play button, and the floating one on phones). */
+export const HERO_VIDEO_ID = "L7ahUGlB8S0";

@@ -7,7 +7,7 @@ export type GalleryImage = { src: StaticImageData; alt: string };
 export const galleryIntro = {
   label: "Gallery",
   heading: "Farm to Port, Documented",
-  copy: "From the first ripe cherry to the sealed export bag — a look at how our coffee is grown, dried, sorted, and readied for the world.",
+  copy: "From the first ripe cherry to the sealed export bag, a look at how our coffee is grown, dried, sorted, and readied for the world.",
   categories: ["Highland Harvest", "Drying & Processing", "Export Ready"],
   image: images.dryingStation,
   imageAlt: "Coffee drying station in the Ethiopian highlands",
@@ -28,5 +28,5 @@ export const galleryImages: GalleryImage[] = [
   { src: images.packBeansNavy, alt: "Whole-bean roasted coffee packs" },
   { src: images.roastedTins, alt: "Kaldi Gift Collection twin tins" },
   { src: images.packShelf, alt: "Ethiopian Coffee retail packaging on display" },
-  { src: images.tote, alt: "Ethiopian Coffee tote bag — Where Coffee Began" },
+  { src: images.tote, alt: "Ethiopian Coffee tote bag, Where Coffee Began" },
 ];

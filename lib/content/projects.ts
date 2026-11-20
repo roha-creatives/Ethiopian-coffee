@@ -45,14 +45,14 @@ const origins: Origin[] = [
   {
     slug: "sidama-bombe",
     title: "Sidama Bombe",
-    region: "Bombe, Bensa — Sidama",
+    region: "Bombe, Bensa, Sidama",
     grade: "Grade 1",
     process: "Washed & Natural",
     altitude: "2,050 – 2,300 masl",
     notes: "White florals, peach, honey, bergamot",
     bestFor: "Competition lots, specialty filter, premium espresso",
     intro:
-      "From the famed Bombe highlands of Bensa — among the highest coffee gardens on earth. Late-ripening cherry, slow-dried in thin layers, yielding micro-lots of remarkable clarity and sweetness. The headline of our export book.",
+      "From the famed Bombe highlands of Bensa, among the highest coffee gardens on earth. Late-ripening cherry, slow-dried in thin layers, yielding micro-lots of remarkable clarity and sweetness. The headline of our export book.",
     image: images.cherryBasket,
     introImage: images.dryingBeds,
     coords: { lat: 6.5, lon: 38.85 }, // Bensa, Sidama
@@ -68,7 +68,7 @@ const origins: Origin[] = [
     notes: "Jasmine, lemon zest, bergamot, black tea",
     bestFor: "Pour-over, filter, specialty espresso",
     intro:
-      "The coffee that made Ethiopia famous among roasters. Grown in the lush Gedeo highlands and washed to crystalline cleanliness — delicate florals, bright citrus, and a silky, tea-like finish.",
+      "The coffee that made Ethiopia famous among roasters. Grown in the lush Gedeo highlands and washed to crystalline cleanliness, delicate florals, bright citrus, and a silky, tea-like finish.",
     image: images.picking,
     introImage: images.handSorting,
     coords: { lat: 6.16, lon: 38.21 }, // Yirgacheffe, Gedeo
@@ -100,7 +100,7 @@ const origins: Origin[] = [
     notes: "Red berry, sweet citrus, chocolate, winey",
     bestFor: "Espresso blends, French press, cold brew",
     intro:
-      "Full and layered, from the volcanic soils and ideal microclimate of the Sidama highlands. A dependable, complex cup that anchors blends and shines alone — our highest-volume origin.",
+      "Full and layered, from the volcanic soils and ideal microclimate of the Sidama highlands. A dependable, complex cup that anchors blends and shines alone, our highest-volume origin.",
     image: images.dryingBeds,
     introImage: images.parchment,
     coords: { lat: 6.95, lon: 38.4 }, // Sidama Region (Hawassa highlands)

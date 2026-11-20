@@ -33,6 +33,8 @@ export default function KenBurnsSlideshow({ images, interval = 5000, sizes, clas
             alt=""
             fill
             sizes={sizes}
+            loading={i === 0 ? "eager" : "lazy"}
+            placeholder="blur"
             className={`object-cover ${i === active ? "animate-ken-burns" : ""}`}
             style={{ animationDuration: `${interval}ms` }}
           />

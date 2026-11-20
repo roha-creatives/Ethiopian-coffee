@@ -5,9 +5,9 @@ export type Cta = { label: string; href: string };
 export const brandName = "Ethiopian Coffee";
 
 export const hero = {
-  badge: "Where Coffee Began · Addis Ababa",
+  badge: "Where Coffee Began · Ethiopia",
   intro:
-    "Specialty only, from the birthplace of coffee. Grade 1 is our standard — Grade 2 available on request. Green for import and roasting, or roasted at origin under the Ethiopian Coffee label.",
+    "Specialty only, from the birthplace of coffee. Grade 1 is our standard, Grade 2 available on request. Green for import and roasting, or roasted at origin under the Ethiopian Coffee label.",
 };
 
 export const footer = {

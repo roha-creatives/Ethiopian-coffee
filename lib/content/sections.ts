@@ -6,8 +6,8 @@ import type { Cta } from "./site";
 
 export const aboutIntro = {
   label: "Our Story",
-  heading: "Signed at the source — from the birthplace of coffee to the world.",
-  copy: "Ethiopia is where coffee was born. We source Grade 1 specialty lots directly from the highlands of Sidama, Bombe, Yirgacheffe, and Guji — hand-selected, cupped to international standards, and exported green or freshly roasted.",
+  heading: "Signed at the source, from the birthplace of coffee to the world.",
+  copy: "Ethiopia is where coffee was born. We source Grade 1 specialty lots directly from the highlands of Sidama, Bombe, Yirgacheffe, and Guji, hand-selected, cupped to international standards, and exported green or freshly roasted.",
   highlights: ["Grade 1 Specialty Arabica", "Hand-Selected & Cupped at Origin", "Farm-to-Port Documentation"],
   cta: { label: "Meet the Brand", href: "/about" } satisfies Cta,
   image: images.cherryBasket,
@@ -44,7 +44,7 @@ export const featureBandCta: Cta = { label: "Request a Sample", href: "/contact"
 export const testimonialsIntro = {
   label: "Founder’s Promise",
   heading: "Authentic, Hand-Selected, World-Class",
-  copy: "Ethiopian Coffee is the vision of Hanan Tariq — taking Ethiopian excellence seriously and presenting it to the world without compromise.",
+  copy: "Ethiopian Coffee is the vision of Hanan Tariq, taking Ethiopian excellence seriously and presenting it to the world without compromise.",
   cta: { label: "Her Full Story", href: "/about" } satisfies Cta,
   /** Spotlight card photo: the coffee ceremony, framed 30% down (CoverImage "upper") so her face,
    *  cup and hands stay in the wide card. */
@@ -67,13 +67,13 @@ export const pricingIntro = {
 /** Shown under the photo/mission columns on About and origin detail pages. */
 export const vision = {
   label: "Our Promise",
-  copy: "Named farms, traceable lots, and a founder’s mark on every bag — authentic, hand-selected, and world-class.",
+  copy: "Named farms, traceable lots, and a founder’s mark on every bag, authentic, hand-selected, and world-class.",
 };
 
 /** Interactive origins map (components/sections/OriginsMap.tsx). */
 export const originsMap = {
   label: "Where We Source",
   heading: "Four Origins, One Highland Belt",
-  copy: "Every origin ships as Grade 1 first, with Grade 2 on request — washed or natural, green or roasted at origin.",
+  copy: "Every origin ships as Grade 1 first, with Grade 2 on request, washed or natural, green or roasted at origin.",
   scrollHint: "Scroll to explore",
 };
