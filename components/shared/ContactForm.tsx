@@ -179,12 +179,17 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
           <select
             {...interest.props}
             onChange={(e) => set("interest", e.target.value)}
-            className={`${fieldClass} cursor-pointer appearance-none pr-12 ${values.interest ? "" : "text-accent"} [&>option]:bg-panel [&>option]:text-ink-10`}
+            className={`${fieldClass} cursor-pointer appearance-none pr-12 ${values.interest ? "" : "text-accent"} [&_optgroup]:bg-panel [&_optgroup]:text-accent [&_option]:bg-panel [&_option]:text-ink-10`}
           >
             <option value="">Select an option</option>
-            {inquiryForm.interests.map((option) => (
-              <option key={option}>{option}</option>
+            {inquiryForm.interestGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
+              </optgroup>
             ))}
+            <option>{inquiryForm.interestFallback}</option>
           </select>
           <ChevronDown
             className="pointer-events-none absolute top-1/2 right-4 size-5 -translate-y-1/2 text-accent"

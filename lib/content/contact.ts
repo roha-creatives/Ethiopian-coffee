@@ -24,18 +24,23 @@ export const contactIntro = {
 /** "Send an Export Inquiry" form. */
 export const inquiryForm = {
   heading: "Send an Export Inquiry",
-  interests: [
-    "Sidama Bombe, Grade 1",
-    "Yirgacheffe, Grade 1",
-    "Yirgacheffe, Grade 2",
-    "Guji, Grade 1",
-    "Guji, Grade 2",
-    "Sidama, Grade 1",
-    "Sidama, Grade 2",
-    "Roasted, Whole Bean",
-    "Roasted, Ground",
-    "Kaldi Gift Tins",
-    "Private Label",
-    "Mixed / Not sure yet",
+  /** Grouped as on ethiopiancoffee.net (optgroups), with the catch-all option last. */
+  interestGroups: [
+    {
+      label: "Green Coffee, Export",
+      options: [
+        "Sidama Bombe, Grade 1",
+        "Yirgacheffe, Grade 1",
+        "Yirgacheffe, Grade 2",
+        "Guji, Grade 1",
+        "Guji, Grade 2",
+        "Sidama, Grade 1",
+        "Sidama, Grade 2",
+      ],
+    },
+    {
+      label: "Roasted Collection",
+      options: ["Roasted, Whole Bean", "Roasted, Ground", "Kaldi Gift Tins", "Private Label"],
+    },
   ],
-};
+  interestFallback: "Mixed / Not sure yet",};
