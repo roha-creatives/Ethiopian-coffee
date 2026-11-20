@@ -15,7 +15,7 @@ export const mission = {
 export const coreValues: Feature[] = [
   {
     title: "Quality Without Compromise",
-    description: "Every lot is cupped and graded before it leaves Ethiopia — Grade 1 or Grade 2, or it does not carry our name.",
+    description: "Every lot is cupped and graded before it leaves Ethiopia, Grade 1 or Grade 2, or it does not carry our name.",
     icon: Award,
   },
   {
@@ -30,7 +30,7 @@ export const coreValues: Feature[] = [
   },
   {
     title: "Direct from Origin",
-    description: "Sourced from Sidama, Bombe, Yirgacheffe, and Guji — with no middle layers between farm and port.",
+    description: "Sourced from Sidama, Bombe, Yirgacheffe, and Guji, with no middle layers between farm and port.",
     icon: Sprout,
   },
 ];
@@ -41,9 +41,9 @@ export const founder = {
   name: "Hanan Tariq",
   role: "Founder & Brand Ambassador",
   paragraphs: [
-    "Ethiopian Coffee is the vision of Hanan Tariq — an award-winning Ethiopian actress, model, and entrepreneur, born and raised in Addis Ababa. She has grown into one of Ethiopia’s most recognizable faces, with an audience of more than a million followers.",
-    "She is also a serial businesswoman: founder of Addis Way Real Estate, brand ambassador for Samsung and M.A.C Cosmetics, the face of CANAL+’s launch in Ethiopia, and a longtime advocate for girls’ education through Studio Samuel. Her ventures share one thread — taking Ethiopian excellence seriously, and presenting it to the world without compromise.",
-    "With Ethiopian Coffee she brings that energy home to the country’s oldest treasure. Every bag that leaves Addis Ababa carries her signature — a personal guarantee that what is inside is authentic, hand-selected, and world-class.",
+    "Ethiopian Coffee is the vision of Hanan Tariq, an award-winning Ethiopian actress, model, and entrepreneur, born and raised in Addis Ababa. She has grown into one of Ethiopia’s most recognizable faces, with an audience of more than a million followers.",
+    "She is also a serial businesswoman: founder of Addis Way Real Estate, brand ambassador for Samsung and M.A.C Cosmetics, the face of CANAL+’s launch in Ethiopia, and a longtime advocate for girls’ education through Studio Samuel. Her ventures share one thread, taking Ethiopian excellence seriously, and presenting it to the world without compromise.",
+    "With Ethiopian Coffee she brings that energy home to the country’s oldest treasure. Every bag that leaves Addis Ababa carries her signature, a personal guarantee that what is inside is authentic, hand-selected, and world-class.",
   ],
   social: { label: "@hanan__tarq", href: "https://www.instagram.com/hanan__tarq/" } satisfies Cta,
   image: images.hananServing,
@@ -56,14 +56,14 @@ export const brandMark = {
   label: "The Mark",
   heading: "A Fingerprint, Not a Logo",
   paragraphs: [
-    "Our mark is a fingerprint drawn into the curve of a walia ibex — the wild mountain goat found only in Ethiopia, and a nod to Kaldi’s herd, who led us to the first coffee cherries. Personal, singular, and impossible to copy, it stands for how we work: named farms, traceable lots, and a founder’s mark on every bag.",
-    "You will find it foil-stamped in gold on our navy and ice-blue packs, alongside Amharic script honoring the origin — የኢትዮጵያ ቡና, Ethiopian coffee.",
+    "Our mark is a fingerprint drawn into the curve of a walia ibex, the wild mountain goat found only in Ethiopia, and a nod to Kaldi’s herd, who led us to the first coffee cherries. Personal, singular, and impossible to copy, it stands for how we work: named farms, traceable lots, and a founder’s mark on every bag.",
+    "You will find it foil-stamped in gold on our navy and ice-blue packs, alongside Amharic script honoring the origin, የኢትዮጵያ ቡና, Ethiopian coffee.",
   ],
   mark: images.fingerprintMark,
   markAlt: "Ethiopian Coffee fingerprint mark",
   social: { label: "Follow @ethiopian_coffee_", href: "https://www.instagram.com/ethiopian_coffee_/" } satisfies Cta,
   tote: images.tote,
-  toteAlt: "Ethiopian Coffee tote bag — Where Coffee Began",
+  toteAlt: "Ethiopian Coffee tote bag, Where Coffee Began",
   /** "The Signature in Motion": the animated logo (ethiopiancoffee.net/videos/brand-logo.mp4). */
   video: {
     src: "/videos/brand-logo.mp4",
@@ -77,7 +77,7 @@ export const brandMark = {
 export const exportMarkets = {
   label: "Where We Ship",
   heading: "Export Markets",
-  note: "Export is our focus — and our coffee is also available at retail across Ethiopia. If your market is not listed, talk to us: we ship worldwide with full documentation.",
+  note: "Export is our focus, and our coffee is also available at retail across Ethiopia. If your market is not listed, talk to us: we ship worldwide with full documentation.",
   image: images.exportWarehouse,
   imageAlt: "Green coffee sacks stacked in our export warehouse",
 };

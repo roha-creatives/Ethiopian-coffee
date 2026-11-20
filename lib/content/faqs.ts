@@ -8,7 +8,7 @@ export const faqs: Faq[] = [
   {
     question: "What grades of coffee do you export?",
     answer:
-      "Specialty only. Grade 1 is our standard export grade, with Grade 2 available on request — every lot is cupped and certified before it ships.",
+      "Specialty only. Grade 1 is our standard export grade, with Grade 2 available on request, every lot is cupped and certified before it ships.",
   },
   {
     question: "Can I request cupping samples?",
@@ -23,11 +23,11 @@ export const faqs: Faq[] = [
   {
     question: "Which markets do you ship to?",
     answer:
-      "The United States, Germany and the EU, Saudi Arabia and the GCC, the wider Middle East, and China and East Asia. If your market is not listed, talk to us — we ship worldwide.",
+      "The United States, Germany and the EU, Saudi Arabia and the GCC, the wider Middle East, and China and East Asia. If your market is not listed, talk to us, we ship worldwide.",
   },
   {
     question: "Do you offer private label?",
     answer:
-      "Yes. Green or roasted, packed under your own brand — we handle sourcing, roasting, packaging, and export documentation end to end.",
+      "Yes. Green or roasted, packed under your own brand, we handle sourcing, roasting, packaging, and export documentation end to end.",
   },
 ];

@@ -10,7 +10,7 @@ export const homeHero = {
   primaryCta: { label: "Explore the Catalogue", href: "/coffees" } satisfies Cta,
   secondaryCta: { label: "Become an Importer", href: "/contact" } satisfies Cta,
   slideshow: [images.cherryBasket, images.picking, images.parchment, images.roastedTins],
-  videoCaption: "From highland farms to your port — hand-selected, cupped, and documented at every step.",
+  videoCaption: "From highland farms to your port, hand-selected, cupped, and documented at every step.",
   tags: ["Sidama", "Yirgacheffe", "Guji", "Grade 1 Specialty", "Washed & Natural"],
 };
 
@@ -26,7 +26,7 @@ export const features: Feature[] = [
   },
   {
     title: "Direct from Origin",
-    description: "Sourced from highland farms and washing stations — full traceability, farm to port.",
+    description: "Sourced from highland farms and washing stations, full traceability, farm to port.",
     icon: Sprout,
   },
   {
@@ -54,7 +54,7 @@ export type Testimonial = { quote: string; name: string; role: string };
 /** Spotlight card: the brand promise from the founder's story (ethiopiancoffee.net/about). */
 export const featuredTestimonial: Testimonial = {
   quote:
-    "Every bag that leaves Addis Ababa carries her signature — a personal guarantee that what is inside is authentic, hand-selected, and world-class.",
+    "Every bag that leaves Addis Ababa carries her signature, a personal guarantee that what is inside is authentic, hand-selected, and world-class.",
   name: "Hanan Tariq",
   role: "– Founder & Brand Ambassador",
 };

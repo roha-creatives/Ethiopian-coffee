@@ -18,7 +18,7 @@ export const roastedCollection = {
   intro: {
     label: "Our Coffees",
     heading: "Roasted at Origin",
-    copy: "The same lots, roasted to order in Addis Ababa and sealed at peak freshness. Retail-ready under the Ethiopian Coffee label — or under yours.",
+    copy: "The same lots, roasted to order in Addis Ababa and sealed at peak freshness. Retail-ready under the Ethiopian Coffee label, or under yours.",
     cta: { label: "Request a Sample", href: "/contact" } satisfies Cta,
   },
   items: [
@@ -37,7 +37,7 @@ export const roastedCollection = {
       subtitle: "Ground coffee",
       tags: ["250g – 2kg", "Light", "Medium", "Dark"],
       excerpt:
-        "The same lots, ground for your brew method the day they are roasted — with an easy home-brewing guide on every pack.",
+        "The same lots, ground for your brew method the day they are roasted, with an easy home-brewing guide on every pack.",
       image: images.packLight,
     },
     {
@@ -46,7 +46,7 @@ export const roastedCollection = {
       subtitle: "Twin roasted tins",
       tags: ["2 × 250g", "Medium", "Dark"],
       excerpt:
-        "Premium roasted arabica in twin gold-rimmed tins, boxed for gifting — inspired by the legend of Kaldi, where coffee began.",
+        "Premium roasted arabica in twin gold-rimmed tins, boxed for gifting, inspired by the legend of Kaldi, where coffee began.",
       image: images.roastedTins,
     },
     {

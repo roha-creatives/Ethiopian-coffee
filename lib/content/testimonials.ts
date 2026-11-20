@@ -17,13 +17,13 @@ export type WallTile =
   | { kind: "video"; image: StaticImageData };
 
 const t = {
-  usa: { name: "United States", role: "Export market", photo: images.warehouse, quote: "Specialty roasters and importers — Grade 1 green lots with full documentation." },
+  usa: { name: "United States", role: "Export market", photo: images.warehouse, quote: "Specialty roasters and importers, Grade 1 green lots with full documentation." },
   eu: { name: "Germany & the EU", role: "Export market", photo: images.weighing, quote: "Delivered to Hamburg, Bremen, and EU ports in GrainPro-lined export bags." },
   gcc: { name: "Saudi Arabia & GCC", role: "Export market", photo: images.parchment, quote: "Growing specialty demand, served with consistent and reliable supply." },
   me: { name: "Middle East", role: "Export market", photo: images.cherryBasket, quote: "Traditional and specialty markets, green or roasted at origin." },
   asia: { name: "China & East Asia", role: "Export market", photo: images.cherryBranch, quote: "An emerging specialty scene, with cupping samples on request." },
   beans: { name: "Single-Origin Whole Bean", role: "Roasted collection", photo: images.packBeansNavy, quote: "Roasted to order and sealed in one-way-valve bags at peak freshness. 250g – 2kg." },
-  gift: { name: "Kaldi Gift Collection", role: "Roasted collection", photo: images.roastedTins, quote: "Twin roasted tins, boxed for gifting — inspired by the legend of Kaldi, where coffee began." },
+  gift: { name: "Kaldi Gift Collection", role: "Roasted collection", photo: images.roastedTins, quote: "Twin roasted tins, boxed for gifting, inspired by the legend of Kaldi, where coffee began." },
 } satisfies Record<string, ClientTestimonial>;
 
 /** Three masonry columns, in the template's order. */

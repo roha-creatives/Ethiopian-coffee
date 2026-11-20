@@ -198,7 +198,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         <textarea
           {...message.props}
           rows={5}
-          placeholder="Tell us about your sourcing needs — volume, frequency, destination port..."
+          placeholder="Tell us about your sourcing needs, volume, frequency, destination port..."
           onChange={(e) => set("message", e.target.value)}
           className={`${fieldClass} min-h-[136px] resize-y`}
         />
