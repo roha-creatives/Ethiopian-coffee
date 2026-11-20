@@ -7,7 +7,7 @@ import KenBurnsSlideshow from "@/components/ui/KenBurnsSlideshow";
 import VideoPopupButton from "@/components/ui/VideoPopupButton";
 import { homeHero } from "@/lib/content/home";
 import { hero } from "@/lib/content/site";
-import { KIT_VIDEO_ID } from "@/lib/images";
+import { HERO_VIDEO_ID } from "@/lib/images";
 import { reveal } from "@/lib/reveal";
 
 // home.json section 1: full-height photo hero with a Background Accent 40% tint and
@@ -26,7 +26,7 @@ export default function HomeHero() {
       {/* Phones: the video card is dropped, so its play button floats over the empty room left
           of the portrait instead. */}
       <VideoPopupButton
-        videoId={KIT_VIDEO_ID}
+        videoId={HERO_VIDEO_ID}
         label="Play: Where Coffee Began"
         className="absolute! top-[30%] left-gutter md:hidden!"
         reveal={{ delay: 300 }}
@@ -59,7 +59,7 @@ export default function HomeHero() {
                 images={homeHero.slideshow}
                 sizes="(min-width: 1025px) 20vw, (min-width: 768px) 70vw, 100vw"
               />
-              <VideoPopupButton videoId={KIT_VIDEO_ID} label="Play: Where Coffee Began" className="relative" />
+              <VideoPopupButton videoId={HERO_VIDEO_ID} label="Play: Where Coffee Began" className="relative" />
             </div>
             <figcaption className="text-small text-background">&quot;{homeHero.videoCaption}&quot;</figcaption>
           </figure>
